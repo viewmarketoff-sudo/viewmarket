@@ -37,7 +37,9 @@ const TermsOfServicePage = () => {
           platform for your internal business or personal trading operations.
         </p>
         <ul className="list-disc space-y-2 pl-5 text-sm text-foreground-light">
-          <li>Do not reverse engineer, scrape, or interfere with the service.</li>
+          <li>
+            Do not reverse engineer, scrape, or interfere with the service.
+          </li>
           <li>Do not use the platform for unlawful or abusive activity.</li>
           <li>Do not attempt to access data you are not authorized to use.</li>
         </ul>

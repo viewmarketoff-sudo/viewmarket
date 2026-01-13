@@ -60,7 +60,8 @@ const ExamplesSection = () => {
         <div className=" flex flex-col items-center gap-5">
           <div className=" text-4xl text-white ">Start trading in minutes</div>
           <CardDescription className="text-base text-foreground-light">
-            Launch your automated trading strategies with templates built for financial markets.
+            Launch your automated trading strategies with templates built for
+            financial markets.
           </CardDescription>
 
           <div className="flex scale-90 gap-5 sm:scale-100">

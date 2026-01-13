@@ -66,7 +66,9 @@ const VideoSection = () => {
                 <div className="mt-10 flex flex-col gap-5 text-lg">
                   Visual chart-based strategy builder
                   <div className=" text-base text-foreground-light">
-                    Design and deploy trading strategies directly from charts. Draw your entry and exit points, set conditions, and let View Market handle the execution automatically.
+                    Design and deploy trading strategies directly from charts.
+                    Draw your entry and exit points, set conditions, and let
+                    View Market handle the execution automatically.
                   </div>
                   <CardDescription className="flex items-center  gap-2 pb-5 text-sm text-foreground-light group-hover:text-foreground">
                     Explore Chart Builder <GraterIcon />
@@ -77,7 +79,9 @@ const VideoSection = () => {
                 <div className="mt-10 flex flex-col gap-5 text-lg">
                   Advanced strategy editor for complex algorithms
                   <div className=" text-base text-foreground-light">
-                    Write custom trading logic with our powerful strategy editor. Build complex algorithms, backtest on historical data, and deploy with confidence.
+                    Write custom trading logic with our powerful strategy
+                    editor. Build complex algorithms, backtest on historical
+                    data, and deploy with confidence.
                   </div>
                   <CardDescription className="flex items-center  gap-2 pb-5 text-sm text-foreground-light group-hover:text-foreground">
                     Explore Strategy Editor <GraterIcon />
@@ -88,7 +92,9 @@ const VideoSection = () => {
                 <div className="mt-10 flex flex-col gap-5 text-lg">
                   Connect to 40+ brokers with one click
                   <div className=" text-base text-foreground-light">
-                    Seamlessly connect to Indian, Forex, and Crypto brokers without third-party platforms. Manage all your broker connections in one secure dashboard.
+                    Seamlessly connect to Indian, Forex, and Crypto brokers
+                    without third-party platforms. Manage all your broker
+                    connections in one secure dashboard.
                   </div>
                   <CardDescription className="flex items-center  gap-2 pb-5 text-sm text-foreground-light group-hover:text-foreground">
                     Explore Broker Connections <GraterIcon />

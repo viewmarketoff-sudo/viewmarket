@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+
 import { viewmarketPosgress } from "@/utils/images";
 
 const LegalHeader = () => {

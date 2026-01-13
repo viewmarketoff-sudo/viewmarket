@@ -61,7 +61,10 @@ const FooterSection = () => {
         <div className="mx-auto flex w-full flex-col justify-between gap-10 px-6 py-10 text-sm sm:flex-row md:max-w-[768px] md:px-10 lg:max-w-[1024px] lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px] ">
           <div className="">
             We protect your data.
-            <span className="bg-gradient-to-b from-foreground to-foreground-light bg-clip-text text-transparent"> More on Security</span>
+            <span className="bg-gradient-to-b from-foreground to-foreground-light bg-clip-text text-transparent">
+              {" "}
+              More on Security
+            </span>
           </div>
           <div className="flex flex-col justify-center gap-2 md:flex-row md:items-center md:gap-8">
             <div className="flex gap-3 text-sm font-normal leading-none tracking-tight">

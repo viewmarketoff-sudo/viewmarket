@@ -228,8 +228,8 @@
       2,
       {
         "multiline": {
-          "delimiter": "none",
-          "requireLast": false
+          "delimiter": "semi",
+          "requireLast": true
         },
         "singleline": {
           "delimiter": "semi",

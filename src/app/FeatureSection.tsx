@@ -63,7 +63,8 @@ function FeatureSection() {
                   Chart-Based Strategies
                 </CardTitle>
                 <CardDescription className="text-center lg:text-start">
-                  Deploy trading strategies directly from your charts with visual automation tools.
+                  Deploy trading strategies directly from your charts with
+                  visual automation tools.
                 </CardDescription>
               </CardHeader>
             </div>
@@ -112,7 +113,8 @@ function FeatureSection() {
             <CardHeader className="px-5 py-0 text-center  ">
               <CardTitle>Direct Broker Connections</CardTitle>
               <CardDescription className="">
-                Connect directly to 40+ brokers across Indian, Forex, and Crypto markets without third-party platforms.
+                Connect directly to 40+ brokers across Indian, Forex, and Crypto
+                markets without third-party platforms.
               </CardDescription>
             </CardHeader>
           </div>
@@ -149,7 +151,8 @@ function FeatureSection() {
             <CardTitle>Automated Execution</CardTitle>
 
             <CardDescription className="">
-              Execute trades automatically based on your strategies with millisecond precision across all connected brokers.
+              Execute trades automatically based on your strategies with
+              millisecond precision across all connected brokers.
             </CardDescription>
           </CardHeader>
           <div className="absolute bottom-0 z-0 h-full w-full">
@@ -176,7 +179,8 @@ function FeatureSection() {
           <CardHeader className="p-0 text-center ">
             <CardTitle>Portfolio Management</CardTitle>
             <CardDescription className="">
-              Track and manage your positions, orders, and performance across all brokers in one unified dashboard.
+              Track and manage your positions, orders, and performance across
+              all brokers in one unified dashboard.
             </CardDescription>
           </CardHeader>
           <div className="relative  overflow-x-hidden">
@@ -309,7 +313,8 @@ function FeatureSection() {
             <CardHeader className="p-0 text-center ">
               <CardTitle>Real-Time Market Data</CardTitle>
               <CardDescription className="">
-                Access live market data, price feeds, and order book updates with real-time synchronization.
+                Access live market data, price feeds, and order book updates
+                with real-time synchronization.
               </CardDescription>
             </CardHeader>
           </div>
@@ -326,7 +331,8 @@ function FeatureSection() {
                   Risk Management
                 </CardTitle>
                 <CardDescription className="text-center lg:max-w-[50%] lg:text-start">
-                  Built-in risk controls with stop-loss, position sizing, and exposure limits to protect your capital.
+                  Built-in risk controls with stop-loss, position sizing, and
+                  exposure limits to protect your capital.
                 </CardDescription>
               </CardHeader>
             </div>

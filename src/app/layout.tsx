@@ -10,7 +10,8 @@ import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "View Market - Automation-First Trading Platform",
-  description: "Deploy chart-based trading strategies with direct broker connections across 40+ integrated Indian, Forex, and Crypto brokers.",
+  description:
+    "Deploy chart-based trading strategies with direct broker connections across 40+ integrated Indian, Forex, and Crypto brokers.",
 };
 
 export default function RootLayout({

@@ -33,7 +33,8 @@ const InfrastructureSection = () => {
             </span>
           </h3>
           <div className="text-base text-foreground-light">
-            See how View Market empowers traders and institutions to automate their strategies and scale their operations.
+            See how View Market empowers traders and institutions to automate
+            their strategies and scale their operations.
           </div>
         </div>
         <div className="mx-auto mt-5 grid grid-cols-12 gap-5">

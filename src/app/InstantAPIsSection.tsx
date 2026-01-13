@@ -20,7 +20,9 @@ const InstantAPIsSection = () => {
             Powerful APIs for seamless broker integration
           </h3>
           <CardDescription className=" pt-5 text-lg text-foreground-light ">
-            Connect to 40+ brokers with unified APIs. Execute trades, fetch market data, and manage positions with simple, consistent interfaces across all platforms.
+            Connect to 40+ brokers with unified APIs. Execute trades, fetch
+            market data, and manage positions with simple, consistent interfaces
+            across all platforms.
           </CardDescription>
           <div className="flex w-full justify-between gap-10 pt-10">
             <div className="flex flex-col gap-2">
@@ -55,7 +57,8 @@ const InstantAPIsSection = () => {
             <div className="flex flex-col gap-2">
               <h2>Performance Analytics</h2>
               <CardDescription className="text-base text-foreground-light">
-                Track your trading performance with detailed analytics and reports
+                Track your trading performance with detailed analytics and
+                reports
               </CardDescription>
               <CardDescription className="flex items-center  gap-2 pb-5 text-sm text-foreground-light group-hover:text-foreground">
                 Explore more <GraterIcon />
@@ -79,7 +82,9 @@ const InstantAPIsSection = () => {
                 <TabsTrigger value="Invok Edge Function">
                   Deploy Strategy
                 </TabsTrigger>
-                <TabsTrigger value="CURD a record">Manage Portfolio</TabsTrigger>
+                <TabsTrigger value="CURD a record">
+                  Manage Portfolio
+                </TabsTrigger>
               </TabsList>
               <TabsContent value="Create user">
                 <Image

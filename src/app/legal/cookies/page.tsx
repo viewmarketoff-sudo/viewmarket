@@ -35,8 +35,12 @@ const CookiesPage = () => {
         <ul className="list-disc space-y-2 pl-5 text-sm text-foreground-light">
           <li>Essential cookies for authentication and security.</li>
           <li>Preference cookies to remember settings and language.</li>
-          <li>Performance cookies to understand feature usage and reliability.</li>
-          <li>Analytics cookies to measure traffic and improve the platform.</li>
+          <li>
+            Performance cookies to understand feature usage and reliability.
+          </li>
+          <li>
+            Analytics cookies to measure traffic and improve the platform.
+          </li>
         </ul>
       </section>
 

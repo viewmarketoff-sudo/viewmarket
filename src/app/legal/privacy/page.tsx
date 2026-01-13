@@ -28,7 +28,9 @@ const PrivacyPage = () => {
         </p>
         <ul className="list-disc space-y-2 pl-5 text-sm text-foreground-light">
           <li>Account data such as name, email, company, and login details.</li>
-          <li>Usage data like pages viewed, actions taken, and feature usage.</li>
+          <li>
+            Usage data like pages viewed, actions taken, and feature usage.
+          </li>
           <li>
             Device and network data including IP address, browser type, and
             operating system.
@@ -78,8 +80,8 @@ const PrivacyPage = () => {
         </h2>
         <p className="text-sm text-foreground-light">
           We retain information as long as needed to provide the service and
-          meet legal obligations. We use reasonable security measures to
-          protect data, but no system is fully secure.
+          meet legal obligations. We use reasonable security measures to protect
+          data, but no system is fully secure.
         </p>
       </section>
 

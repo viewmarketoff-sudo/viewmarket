@@ -22,9 +22,8 @@ const RiskDisclosurePage = () => {
           Market and Strategy Risk
         </h2>
         <p className="text-sm text-foreground-light">
-          Markets can be volatile and unpredictable. You may lose some or all
-          of your capital, and past performance does not guarantee future
-          results.
+          Markets can be volatile and unpredictable. You may lose some or all of
+          your capital, and past performance does not guarantee future results.
         </p>
       </section>
 

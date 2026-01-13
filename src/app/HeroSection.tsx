@@ -20,7 +20,10 @@ const HeroSection = () => {
         </div>
       </div>
       <CardDescription className=" mx-auto w-full text-center text-lg text-card-foreground md:w-[60%]">
-        View Market is an automation-first trading platform. <br /> Deploy chart-based strategies with direct broker connections across 40+ integrated Indian, Forex, and Crypto brokers—no third-party platforms required.
+        View Market is an automation-first trading platform. <br /> Deploy
+        chart-based strategies with direct broker connections across 40+
+        integrated Indian, Forex, and Crypto brokers—no third-party platforms
+        required.
       </CardDescription>
       <div className="flex gap-2 ">
         <Button variant="default" size="sm">

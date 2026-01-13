@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Lock } from "lucide-react";
+
 import LegalHeader from "../legal/LegalHeader";
 
 const GoogleIcon = () => (
