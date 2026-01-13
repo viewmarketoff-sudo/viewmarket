@@ -8,6 +8,7 @@ import {
   Command,
   Frame,
   GalleryVerticalEnd,
+  Home,
   Map,
   PieChart,
   Settings2,
@@ -18,11 +19,16 @@ import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
 import { TeamSwitcher } from "@/components/team-switcher"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
 
@@ -137,6 +143,13 @@ const data = {
       ],
     },
   ],
+  navDashboard: [
+    {
+      title: "Home",
+      url: "/user-dashboard/home",
+      icon: Home,
+    },
+  ],
   projects: [
     {
       name: "Design Engineering",
@@ -157,17 +170,45 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const pathname = usePathname()
+  const navDashboard = data.navDashboard.map((item) => ({
+    ...item,
+    isActive:
+      pathname === item.url || pathname?.startsWith(`${item.url}/`) || false,
+  }))
+  const settingsActive =
+    pathname === "/user-dashboard/settings" ||
+    pathname?.startsWith("/user-dashboard/settings/") ||
+    false
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        <NavMain label="Dashboard" items={navDashboard} />
+        <NavMain label="Platform" items={data.navMain} />
         <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <div className="flex flex-col gap-2">
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                tooltip="Settings"
+                isActive={settingsActive}
+                asChild
+              >
+                <Link href="/user-dashboard/settings">
+                  <Settings2 />
+                  <span>Settings</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+          <NavUser user={data.user} />
+        </div>
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

@@ -87,19 +87,27 @@ module.exports = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-  		keyframes: {
-  			marquee: {
-  				'0%': {
-  					transform: 'translateX(0%)'
-  				},
-  				'100%': {
-  					transform: 'translateX(-100%)'
-  				}
-  			},
-  			marquee2: {
-  				'0%': {
-  					transform: 'translateX(100%)'
-  				},
+                keyframes: {
+                        marquee: {
+                                '0%': {
+                                        transform: 'translateX(0%)'
+                                },
+                                '100%': {
+                                        transform: 'translateX(-100%)'
+                                }
+                        },
+                        'marquee-grid': {
+                                '0%': {
+                                        transform: 'translateX(0%)'
+                                },
+                                '100%': {
+                                        transform: 'translateX(-50%)'
+                                }
+                        },
+                        marquee2: {
+                                '0%': {
+                                        transform: 'translateX(100%)'
+                                },
   				'100%': {
   					transform: 'translateX(0%)'
   				}
@@ -121,13 +129,14 @@ module.exports = {
   				}
   			}
   		},
-  		animation: {
-  			marquee2: 'marquee2 25s linear infinite',
-  			marquee: 'marquee 25s linear infinite',
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
-  	}
+                animation: {
+                        marquee2: 'marquee2 25s linear infinite',
+                        marquee: 'marquee 25s linear infinite',
+                        'marquee-grid': 'marquee-grid 45s linear infinite',
+                        'accordion-down': 'accordion-down 0.2s ease-out',
+                        'accordion-up': 'accordion-up 0.2s ease-out'
+                }
+        }
   },
   variants: {
     extend: {

@@ -4,7 +4,6 @@ import React from "react";
 import "./globals.css";
 import TitleBar from "@/components/shared/TitleBar";
 
-import CommunitySection from "./CommunitySection";
 import HeroSection from "./HeroSection";
 import ExamplesSection from "./ExamplesSection";
 import InstantAPIsSection from "./InstantAPIsSection";
@@ -20,7 +19,6 @@ export default function Home() {
       <TitleBar />
       <HeroSection />
       <FeatureSection />
-      <CommunitySection />
       <ExamplesSection />
       <InstantAPIsSection />
       <VideoSection />

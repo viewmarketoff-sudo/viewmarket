@@ -63,14 +63,14 @@ const SignInPage = () => {
         <section className="w-full max-w-md space-y-6 lg:border-l lg:border-border/60 lg:pl-16">
           <div className="space-y-4">
             <Link
-              href="/user-dashboard"
+              href="/user-dashboard/home"
               className="mx-auto flex w-full max-w-sm items-center justify-center gap-3 rounded-full bg-white px-6 py-4 text-sm font-semibold text-black shadow-[0_18px_40px_rgba(0,0,0,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_rgba(0,0,0,0.4)]"
             >
               <GoogleIcon />
               Continue with Google
             </Link>
             <Link
-              href="/user-dashboard"
+              href="/user-dashboard/home"
               className="mx-auto flex w-full max-w-sm items-center justify-center gap-3 rounded-full bg-white px-6 py-4 text-sm font-semibold text-black shadow-[0_18px_40px_rgba(0,0,0,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_rgba(0,0,0,0.4)]"
             >
               <GithubIcon />
