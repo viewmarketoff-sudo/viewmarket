@@ -1,6 +1,6 @@
 export { default as logo } from "./logo.png";
 export { default as logoDark } from "./logo-dark.png";
-export { default as supabasePosgress } from "./supabasePosgress.svg";
+export { default as viewmarketPosgress } from "./supabasePosgress.svg";
 export { default as database } from "./database.webp";
 export { default as edgefunction } from "./edge-functions.webp";
 export { default as vectorImage } from "./vectorImage.svg";

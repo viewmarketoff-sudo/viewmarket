@@ -40,6 +40,19 @@
     );
   }
 }
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(to bottom, hsl(0, 0%, 95%), hsl(0, 0%, 63%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .border-gradient {
+    border-image: linear-gradient(to bottom, hsl(0, 0%, 95%), hsl(0, 0%, 63%)) 1;
+  }
+}
 @font-face {
   font-family: "circular";
   src: url("/font/circular.ttf");
