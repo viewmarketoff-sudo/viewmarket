@@ -13,20 +13,18 @@ const HeroSection = () => {
     <div className="flex flex-col items-center gap-8 pb-14 pt-32 ">
       <div className=" pt-14 text-center">
         <div className="block bg-gradient-to-b from-foreground to-foreground-light bg-clip-text text-7xl text-transparent">
-          Build in a weekend
+          Automate Your Trading
         </div>
-        <div className="block bg-gradient-to-br from-[#3ECF8E] via-[#3ECF8E] to-[#3ecfb2] bg-clip-text text-7xl text-transparent md:ml-0">
-          Scale to millions
+        <div className="block bg-gradient-to-b from-foreground to-foreground-light bg-clip-text text-7xl text-transparent md:ml-0">
+          Deploy from Charts
         </div>
       </div>
       <CardDescription className=" mx-auto w-full text-center text-lg text-card-foreground md:w-[60%]">
-        Supabase is an open source Firebase alternative. <br /> Start your
-        project with a Postgres database, Authentication, instant APIs, Edge
-        Functions, Realtime subscriptions, Storage, and Vector embeddings.
+        View Market is an automation-first trading platform. <br /> Deploy chart-based strategies with direct broker connections across 40+ integrated Indian, Forex, and Crypto brokers—no third-party platforms required.
       </CardDescription>
       <div className="flex gap-2 ">
         <Button variant="default" size="sm">
-          Start your project
+          Start Trading
         </Button>
         <Button variant="secondary" size="sm">
           <div className="my-auto pr-2 text-[#707070]">
@@ -37,7 +35,7 @@ const HeroSection = () => {
       </div>
       <div className=" flex flex-col items-center gap-3 pt-7">
         <div className=" text-xs text-foreground-light">
-          Works seamlessly with 20+ frameworks
+          40+ integrated brokers across Indian, Forex, and Crypto markets
         </div>
         <div className=" flex justify-center gap-2">
           <NextJsIcon /> <ReactJsIcon /> <NuxtJsIcon />

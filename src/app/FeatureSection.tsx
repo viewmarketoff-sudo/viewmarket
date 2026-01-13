@@ -18,7 +18,7 @@ import {
   database,
   edgefunction,
   realtimeImage,
-  supabasePosgress,
+  viewmarketPosgress,
   vectorImage,
 } from "@/utils/images";
 import DatabaseIcon from "@/utils/icons/feature/DatabaseIcon";
@@ -60,26 +60,25 @@ function FeatureSection() {
 
               <CardHeader className="p-0">
                 <CardTitle className=" text-center lg:text-start">
-                  Database
+                  Chart-Based Strategies
                 </CardTitle>
                 <CardDescription className="text-center lg:text-start">
-                  Every project is a full Postgres database, the world&apos;
-                  most trusted relational database.
+                  Deploy trading strategies directly from your charts with visual automation tools.
                 </CardDescription>
               </CardHeader>
             </div>
             <ul className="hidden flex-col gap-1 pb-5 pt-10 lg:block">
               <ListItem>
                 <CheckIcon />
-                100% portable
+                Visual strategy builder
               </ListItem>
               <ListItem>
                 <CheckIcon />
-                Built-in Auth with RLS
+                Real-time chart analysis
               </ListItem>
               <ListItem>
                 <CheckIcon />
-                Easy to extend
+                One-click deployment
               </ListItem>
             </ul>
           </div>
@@ -87,7 +86,7 @@ function FeatureSection() {
             <figure
               className="inset-0 z-0  lg:absolute"
               role="img"
-              aria-label="Supabase Postgres database visual composition"
+              aria-label="View Market chart-based strategy visual composition"
             >
               <span className="absolute left-0 right-0 top-24 my-auto flex h-full w-full items-end justify-center md:top-24 lg:bottom-0 lg:left-auto lg:top-0 lg:aspect-square lg:w-auto lg:items-center lg:justify-end">
                 <Image
@@ -96,7 +95,7 @@ function FeatureSection() {
                   className="absolute inset-0 h-full w-full text-transparent"
                 />
                 <Image
-                  src={supabasePosgress}
+                  src={viewmarketPosgress}
                   alt=""
                   className="absolute z-10 m-auto h-full w-full opacity-0 transition-opacity will-change-transform group-hover:opacity-100 "
                 />
@@ -111,10 +110,9 @@ function FeatureSection() {
               <AuthenticationIcon />
             </Button>
             <CardHeader className="px-5 py-0 text-center  ">
-              <CardTitle>Authentication</CardTitle>
+              <CardTitle>Direct Broker Connections</CardTitle>
               <CardDescription className="">
-                Add user sign ups and logins, securing your data with Row Level
-                Security.
+                Connect directly to 40+ brokers across Indian, Forex, and Crypto markets without third-party platforms.
               </CardDescription>
             </CardHeader>
           </div>
@@ -123,7 +121,7 @@ function FeatureSection() {
               <div className="w-full rounded-r-lg border border-input bg-background px-4 py-4 text-sm text-input  ">
                 @gmail.com
               </div>
-              <div className="w-full rounded-r-lg border border-input bg-background px-4 py-4 text-sm text-input group-hover:border-[#3FCF8E] group-hover:text-[#3FCF8E]">
+              <div className="w-full rounded-r-lg border border-input bg-background px-4 py-4 text-sm text-input group-hover:border-foreground group-hover:bg-gradient-to-b group-hover:from-foreground group-hover:to-foreground-light group-hover:bg-clip-text group-hover:text-transparent">
                 ccess Required
               </div>
               <div className="w-full rounded-r-lg border border-input bg-background px-4 py-4 text-sm text-input ">
@@ -134,7 +132,7 @@ function FeatureSection() {
               <div className="w-full rounded-l-lg border border-input bg-background px-4 py-4 text-sm text-input ">
                 alex160198
               </div>
-              <div className="w-full whitespace-nowrap rounded-l-lg border border-input bg-background px-4 py-4 text-sm text-input group-hover:border-[#3FCF8E] group-hover:text-[#3FCF8E]">
+              <div className="w-full whitespace-nowrap rounded-l-lg border border-input bg-background px-4 py-4 text-sm text-input group-hover:border-foreground group-hover:bg-gradient-to-b group-hover:from-foreground group-hover:to-foreground-light group-hover:bg-clip-text group-hover:text-transparent">
                 Access Required
               </div>
               <div className="w-full rounded-l-lg border border-input bg-background px-4 py-4 text-sm text-input ">
@@ -148,11 +146,10 @@ function FeatureSection() {
             <EdgeIcon />
           </Button>
           <CardHeader className="z-10 px-5 py-0 text-center  ">
-            <CardTitle>Edge Functions</CardTitle>
+            <CardTitle>Automated Execution</CardTitle>
 
             <CardDescription className="">
-              Easily write custom code without deploying or scaling servers.
-              Supabase Edge Functions globe
+              Execute trades automatically based on your strategies with millisecond precision across all connected brokers.
             </CardDescription>
           </CardHeader>
           <div className="absolute bottom-0 z-0 h-full w-full">
@@ -160,7 +157,7 @@ function FeatureSection() {
             <figure
               className="absolute inset-0 z-0  w-full"
               role="img"
-              aria-label="Supabase Postgres database visual composition"
+              aria-label="View Market automated execution visual composition"
             >
               <span className="absolute inset-0 object-cover object-center ">
                 <Image
@@ -177,9 +174,9 @@ function FeatureSection() {
             <StorageIcon />
           </Button>
           <CardHeader className="p-0 text-center ">
-            <CardTitle>Storage</CardTitle>
+            <CardTitle>Portfolio Management</CardTitle>
             <CardDescription className="">
-              Store, organize, and serve large files, from videos to images.
+              Track and manage your positions, orders, and performance across all brokers in one unified dashboard.
             </CardDescription>
           </CardHeader>
           <div className="relative  overflow-x-hidden">
@@ -310,10 +307,9 @@ function FeatureSection() {
               <RealTimeIcon />
             </Button>
             <CardHeader className="p-0 text-center ">
-              <CardTitle>Realtime</CardTitle>
+              <CardTitle>Real-Time Market Data</CardTitle>
               <CardDescription className="">
-                Build multiplayer experiences with realtime data
-                synchronization.
+                Access live market data, price feeds, and order book updates with real-time synchronization.
               </CardDescription>
             </CardHeader>
           </div>
@@ -327,22 +323,21 @@ function FeatureSection() {
 
               <CardHeader className="p-0">
                 <CardTitle className="text-center lg:text-start">
-                  Vector
+                  Risk Management
                 </CardTitle>
                 <CardDescription className="text-center lg:max-w-[50%] lg:text-start">
-                  Integrate your favorite ML- models to store, index and search
-                  vector embeddings.
+                  Built-in risk controls with stop-loss, position sizing, and exposure limits to protect your capital.
                 </CardDescription>
               </CardHeader>
             </div>
             <ul className="hidden flex-col gap-2 pb-5 pt-10 lg:flex ">
               <ListItem>
                 <SunIcon className=" h-4 w-4" />
-                OpenAI
+                Stop Loss & Take Profit
               </ListItem>
               <ListItem>
                 <SunIcon className=" h-4 w-4" />
-                Hugging Face
+                Position Sizing
               </ListItem>
             </ul>
           </div>
@@ -350,7 +345,7 @@ function FeatureSection() {
             <figure
               className=" inset-0 z-0  lg:absolute"
               role="img"
-              aria-label="Supabase Postgres database visual composition"
+              aria-label="View Market risk management visual composition"
             >
               <span className="absolute left-0 right-0 top-24 my-auto flex h-full w-full items-end justify-center md:top-24 lg:bottom-0 lg:left-auto lg:top-0 lg:aspect-square lg:w-auto lg:items-center lg:justify-end">
                 <Image

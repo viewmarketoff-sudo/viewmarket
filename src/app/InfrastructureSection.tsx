@@ -7,15 +7,15 @@ import { structure1, structure2, structure3 } from "@/utils/images";
 const list = [
   {
     icon: structure1,
-    desc: "Good Tape migrates to Supabase managed Postgres and Authentication and achieves database efficiency and a 60% cost reduction",
+    desc: "Leading prop trading firm achieves 10x faster execution with View Market's direct broker integration",
   },
   {
     icon: structure2,
-    desc: "Scaling securely: one million users in 7 months protected with Supabase Auth",
+    desc: "Retail trader scales from manual to fully automated trading across 15 brokers in 3 months",
   },
   {
     icon: structure3,
-    desc: "Mendable.ai switches from Pinecone to Supabase for PostgreSQL vector embeddings",
+    desc: "Hedge fund migrates from TradingView to View Market for chart-based strategy deployment",
   },
 ];
 const InfrastructureSection = () => {
@@ -27,14 +27,13 @@ const InfrastructureSection = () => {
             CUSTOMER STORIES
           </div>
           <h3 className=" text-3xl  ">
-            Infrastructure{" "}
+            Trusted infrastructure{" "}
             <span className="text-foreground-light">
-              to innovate and scale with ease.
+              for traders who demand reliability.
             </span>
           </h3>
           <div className="text-base text-foreground-light">
-            See how Supabase empowers companies of all sizes to accelerate their
-            growth and streamline their work.
+            See how View Market empowers traders and institutions to automate their strategies and scale their operations.
           </div>
         </div>
         <div className="mx-auto mt-5 grid grid-cols-12 gap-5">
@@ -50,7 +49,7 @@ const InfrastructureSection = () => {
                   className=" z-0 flex max-h-7 justify-start overflow-hidden object-contain object-left-top"
                 />
                 <div className="pt-5">{item.desc}</div>
-                <CardDescription className="flex gap-2  text-brand">
+                <CardDescription className="flex gap-2 bg-gradient-to-b from-foreground to-foreground-light bg-clip-text text-transparent">
                   Learn more
                 </CardDescription>
               </Card>

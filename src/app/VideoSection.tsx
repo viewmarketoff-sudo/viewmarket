@@ -6,7 +6,7 @@ const VideoSection = () => {
   return (
     <div className="flex w-full flex-col gap-5 px-6 pt-48 md:max-w-[768px] lg:max-w-[1024px] lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px]">
       <h3 className=" pb-14 text-2xl ">
-        Build your app without leaving the dashboard
+        Complete trading platform in your browser
       </h3>
       <Tabs defaultValue="Table editor" className="h-full">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row ">
@@ -16,7 +16,7 @@ const VideoSection = () => {
               className="relative h-full w-full  "
             >
               <iframe
-                title="Demo video showcasing Supabase"
+                title="Demo video showcasing View Market"
                 className="l-0 r-0 absolute h-full w-full overflow-hidden rounded-md  border border-border bg-black "
                 src="https://www.youtube.com/embed/xIHjwJgxOmk?si=OA4AnxU6hZDYQb1z&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;disablekb=1&amp;mute=1&amp;muted=1"
                 allow="autoplay; modestbranding; encrypted-media"
@@ -28,7 +28,7 @@ const VideoSection = () => {
               className="relative aspect-video h-full w-full "
             >
               <iframe
-                title="Demo video showcasing Supabase"
+                title="Demo video showcasing View Market"
                 className="l-0 r-0 absolute h-full w-full overflow-hidden rounded-md  border border-border bg-black "
                 src="https://www.youtube.com/embed/Hch1mZPZ53A?si=LAH_BB756M1OSWpT&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;disablekb=1&amp;mute=1&amp;muted=1"
                 allow="autoplay; modestbranding; encrypted-media"
@@ -40,7 +40,7 @@ const VideoSection = () => {
               className="relative aspect-video h-full w-full "
             >
               <iframe
-                title="Demo video showcasing Supabase"
+                title="Demo video showcasing View Market"
                 className="l-0 r-0 absolute h-full w-full overflow-hidden rounded-md  border border-border bg-black "
                 src="https://www.youtube.com/embed/vP319FCIZ6Y?si=QET9fpysJRKQcmRi&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;disablekb=1&amp;mute=1&amp;muted=1"
                 allow="autoplay; modestbranding; encrypted-media"
@@ -52,54 +52,46 @@ const VideoSection = () => {
             <div>
               <TabsList className="">
                 <TabsTrigger value="Table editor" variant="underline">
-                  Table editor
+                  Chart Builder
                 </TabsTrigger>
                 <TabsTrigger value="SQL Editor" variant="underline">
-                  SQL Editor
+                  Strategy Editor
                 </TabsTrigger>
                 <TabsTrigger value="Auth rules" variant="underline">
-                  Auth rules
+                  Broker Connections
                 </TabsTrigger>{" "}
               </TabsList>{" "}
               <div className=" mt-[-4px] border border-secondary"></div>
               <TabsContent value="Table editor">
                 <div className="mt-10 flex flex-col gap-5 text-lg">
-                  Manage your data with the familiarity of a spreadsheet
+                  Visual chart-based strategy builder
                   <div className=" text-base text-foreground-light">
-                    You don’t have to be a database expert to use Supabase. Our
-                    table editor makes Postgres easy to use, even for
-                    non-techies. You can do everything right in our dashboard.
+                    Design and deploy trading strategies directly from charts. Draw your entry and exit points, set conditions, and let View Market handle the execution automatically.
                   </div>
                   <CardDescription className="flex items-center  gap-2 pb-5 text-sm text-foreground-light group-hover:text-foreground">
-                    Explore Table View <GraterIcon />
+                    Explore Chart Builder <GraterIcon />
                   </CardDescription>
                 </div>
               </TabsContent>
               <TabsContent value="SQL Editor">
                 <div className="mt-10 flex flex-col gap-5 text-lg">
-                  In-built SQL editor for when you need greater control
+                  Advanced strategy editor for complex algorithms
                   <div className=" text-base text-foreground-light">
-                    Write, save, and execute SQL queries directly on our
-                    dashboard, with templates to save you time. Run common
-                    queries and even build applications using our growing list
-                    of templates.
+                    Write custom trading logic with our powerful strategy editor. Build complex algorithms, backtest on historical data, and deploy with confidence.
                   </div>
                   <CardDescription className="flex items-center  gap-2 pb-5 text-sm text-foreground-light group-hover:text-foreground">
-                    Explore Table View <GraterIcon />
+                    Explore Strategy Editor <GraterIcon />
                   </CardDescription>
                 </div>
               </TabsContent>
               <TabsContent value="Auth rules">
                 <div className="mt-10 flex flex-col gap-5 text-lg">
-                  User management as straight-forward as it can be
+                  Connect to 40+ brokers with one click
                   <div className=" text-base text-foreground-light">
-                    Easily manage your users with Supabase Auth, with email
-                    logins, magic links, and third-party logins. Create complex
-                    access policies with SQL rules to fit your unique business
-                    needs.
+                    Seamlessly connect to Indian, Forex, and Crypto brokers without third-party platforms. Manage all your broker connections in one secure dashboard.
                   </div>
                   <CardDescription className="flex items-center  gap-2 pb-5 text-sm text-foreground-light group-hover:text-foreground">
-                    Explore Table View <GraterIcon />
+                    Explore Broker Connections <GraterIcon />
                   </CardDescription>
                 </div>
               </TabsContent>

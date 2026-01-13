@@ -20,57 +20,57 @@ import {
 const personList1 = [
   {
     img: person1,
-    name: "@thatguy_tex",
-    desc: "Working with @supabase has been one of the best dev experiences I've had lately. Incredibly easy to set up, great documentation, and so many fewer hoops to jump through than the competition. I definitely plan to use it on any and all future projects.",
+    name: "@trader_pro",
+    desc: "Working with @viewmarket has been incredible. Set up my first automated strategy in under an hour. The direct broker connections are a game-changer - no more dealing with third-party platforms!",
   },
   {
     img: person2,
-    name: "@IxoyeDesign",
-    desc: "@supabase is just 🤯 Now I see why a lot of people love using it as a backend for their applications. I am really impressed with how easy it is to set up an Auth and then just code it together for the frontend. @IngoKpp now I see your joy with Supabase #coding #fullstackwebdev",
+    name: "@AlgoTrader_IN",
+    desc: "@viewmarket is just 🤯 The chart-based strategy builder is so intuitive. I can literally draw my trades on the chart and deploy them live. This is the future of trading automation! #algotrading #automation",
   },
 ];
 
 const personList2 = [
   {
     img: person3,
-    name: "@varlenneto",
-    desc: "I've been using @supabase for two personal projects and it has been amazing being able to use the power of Postgres and don't have to worry about the backend",
+    name: "@crypto_whale",
+    desc: "I've been using @viewmarket for crypto arbitrage and it's amazing being able to connect to multiple exchanges and execute strategies automatically without writing complex code",
   },
   {
     img: person4,
-    name: "@justinjunodev",
-    desc: "Y'all @supabase + @nextjs is amazing! 🙌 Barely an hour into a proof-of-concept and already have most of the functionality in place. 🤯🤯🤯",
+    name: "@options_master",
+    desc: "Y'all @viewmarket + options strategies is amazing! 🙌 Deployed my first iron condor automation in less than an hour. The backtesting feature saved me from a bad strategy. 🤯🤯🤯",
   },
   {
     img: person5,
-    name: "@justinjunodev",
-    desc: "And thanks to @supabase, I was able to go from idea to launched feature in a matter of hours. Absolutely amazing!",
+    name: "@forex_ninja",
+    desc: "And thanks to @viewmarket, I was able to go from manual trading to fully automated forex strategies in a matter of days. The 40+ broker integrations are absolutely amazing!",
   },
 ];
 
 const personList3 = [
   {
     img: person6,
-    name: "@damlakoksal",
-    desc: "Contributing to open-source projects and seeing merged PRs gives enormous happiness! Special thanks to @supabase, for giving this opportunity by staying open-source and being junior-friendly✌🏼",
+    name: "@nifty_trader",
+    desc: "The Indian broker integrations are seamless! Connected my Zerodha, Upstox, and Angel One accounts in minutes. View Market makes multi-broker trading so easy✌🏼",
   },
   {
     img: person7,
-    name: "@KenTheRogers",
-    desc: "Holy crap. @supabase is absolutely incredible. Most elegant backend as a service I've ever used. This is a dream.",
+    name: "@DayTraderPro",
+    desc: "Holy crap. @viewmarket is absolutely incredible. Most elegant trading automation platform I've ever used. Chart-based deployment is a dream come true.",
   },
 ];
 
 const personList4 = [
   {
     img: person8,
-    name: "@PaoloRicciuti",
-    desc: "Over the course of a few weeks, we migrated 125.000 users (email/pw, Gmail, Facebook, Apple logins) from Auth0 to @supabase and have now completed the migration. I'm just glad the migration is done 😅 Went well, besides a few edge cases (duplicate emails/linked accounts)",
+    name: "@QuantTrader",
+    desc: "Migrated all my TradingView strategies to @viewmarket and couldn't be happier. The direct broker execution without third-party platforms means faster fills and lower costs. Best decision I made this year 😅",
   },
   {
     img: person9,
-    name: "@saxxone",
-    desc: "Using @supabase I'm really pleased on the power of postgres (and sql in general). Despite being a bit dubious about the whole backend as a service thing I have to say I really don't miss anything. The whole experience feel very robust and secure.",
+    name: "@swing_trader",
+    desc: "Using @viewmarket I'm really pleased with the power of automated trading. The risk management features give me peace of mind. I can set stop losses and position sizes, and the platform handles everything.",
   },
 ];
 
@@ -79,10 +79,9 @@ const CommunitySection: React.FC = () => {
     <div className="flex w-full flex-col gap-4 px-6 md:max-w-[768px] lg:max-w-[1024px] lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px] ">
       <div className="flex flex-col gap-5 pt-20">
         <div className="flex flex-col items-center gap-4">
-          <div className="text-4xl text-white">Join the community</div>
+          <div className="text-4xl text-white">Join the trading community</div>
           <CardDescription className="text-base text-foreground-light">
-            Supported by a network of early advocates, contributors, and
-            champions.
+            Connect with traders, share strategies, and learn from a growing community of automation enthusiasts.
           </CardDescription>
 
           <div className="flex gap-5">
@@ -91,7 +90,7 @@ const CommunitySection: React.FC = () => {
               className="border-border bg-card p-3"
               size="sm"
             >
-              Github discussions{" "}
+              Community Forum{" "}
               <div className="pl-2 text-foreground">
                 <MessageIcon />
               </div>

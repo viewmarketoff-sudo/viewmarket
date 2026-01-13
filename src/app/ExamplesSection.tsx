@@ -14,8 +14,8 @@ import { checBoxesBg } from "@/utils/images";
 
 const exampleList = [
   {
-    name: "Stripe Subscriptions Starter",
-    desc: "The all-in-one subscription starter kit for high-performance SaaS applications, powered by Stripe, Supabase, and Vercel.",
+    name: "Algorithmic Trading Starter",
+    desc: "Complete algo trading setup with strategy builder, backtesting, and live execution across multiple brokers.",
     icons: [
       <NextJsIcon key={0} />,
       <StripeIcon key={1} />,
@@ -23,13 +23,13 @@ const exampleList = [
     ],
   },
   {
-    name: "Next.js Starter",
-    desc: "A Next.js App Router template configured with cookie-based auth using Supabase, TypeScript and Tailwind CSS.",
+    name: "Options Strategy Builder",
+    desc: "Build and deploy complex options strategies with real-time Greeks calculation and risk analysis.",
     icons: [<NextJsIcon key={0} />, <VercelIcon key={1} />],
   },
   {
-    name: "AI Chatbot",
-    desc: "An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Supabase.",
+    name: "Multi-Broker Dashboard",
+    desc: "Unified dashboard template to manage positions, orders, and P&L across all your connected brokers.",
     icons: [
       <NextJsIcon key={0} />,
       <OpenAIIcon key={1} />,
@@ -37,18 +37,18 @@ const exampleList = [
     ],
   },
   {
-    name: "LangChain + Next.js Starter",
-    desc: "Starter template and example use-cases for LangChain projects in Next.js, including chat, agents, and retrieval.",
+    name: "Chart Pattern Scanner",
+    desc: "Automated pattern recognition system that scans charts and triggers trades based on technical setups.",
     icons: [<LangChainIcon key={0} />, <NextJsIcon key={1} />],
   },
   {
-    name: "Flutter User Management",
-    desc: "Get started with Supabase and Flutter by building a user management app with auth, file storage, and database.",
+    name: "Mobile Trading App",
+    desc: "Full-featured mobile trading app with chart-based strategy deployment and real-time notifications.",
     icons: [<FlutterIcon key={0} />],
   },
   {
-    name: "Expo React Native Starter",
-    desc: "An extended version of create-t3-turbo implementing authentication on both the web and mobile applications.",
+    name: "Crypto Arbitrage Bot",
+    desc: "Cross-exchange arbitrage bot template with real-time price monitoring and automated execution.",
     icons: [<DenoIcon key={0} />],
   },
 ];
@@ -58,15 +58,14 @@ const ExamplesSection = () => {
     <div className="flex w-full flex-col gap-4 px-6 md:max-w-[768px] lg:max-w-[1024px]  lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px]">
       <div className=" flex flex-col gap-5 pt-20">
         <div className=" flex flex-col items-center gap-5">
-          <div className=" text-4xl text-white ">Start building in seconds</div>
+          <div className=" text-4xl text-white ">Start trading in minutes</div>
           <CardDescription className="text-base text-foreground-light">
-            Kickstart your next project with templates built by us and our
-            community.
+            Launch your automated trading strategies with templates built for financial markets.
           </CardDescription>
 
           <div className="flex scale-90 gap-5 sm:scale-100">
             <Button variant="outline" className="bg-card" size="sm">
-              View all examples
+              View all templates
             </Button>
             <Button variant="outline" className="bg-card" size="sm">
               <div className=" pr-2 text-foreground">

@@ -11,7 +11,6 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { logoDark, structure1, structure2, structure3 } from "@/utils/images";
-import GithubIcon from "@/utils/icons/socialMedia/GithubIcon";
 import DatabaseIcon from "@/utils/icons/feature/DatabaseIcon";
 import AuthenticationIcon from "@/utils/icons/feature/AuthenticationIcon";
 import EdgeIcon from "@/utils/icons/feature/EdgeIcon";
@@ -26,47 +25,47 @@ import MobileMenu from "./MobileMenu"; // Create this component
 const list = [
   {
     icon: structure1,
-    desc: "Good Tape migrates to Supabase managed Postgres and Authentication and achieves database efficiency and a 60% cost reduction",
+    desc: "Leading prop trading firm achieves 10x faster execution with View Market's direct broker integration",
   },
   {
     icon: structure2,
-    desc: "Scaling securely: one million users in 7 months protected with Supabase Auth",
+    desc: "Retail trader scales from manual to fully automated trading across 15 brokers in 3 months",
   },
   {
     icon: structure3,
-    desc: "Mendable.ai switches from Pinecone to Supabase for PostgreSQL vector embeddings",
+    desc: "Hedge fund migrates from TradingView to View Market for chart-based strategy deployment",
   },
 ];
 const menuItems = [
   {
     icon: <DatabaseIcon />,
-    title: "Database",
-    description: "Fully portable Postgres database",
+    title: "Chart Builder",
+    description: "Visual strategy deployment from charts",
   },
   {
     icon: <AuthenticationIcon />,
-    title: "Authentication",
-    description: "User Management out of the box",
+    title: "Broker Connections",
+    description: "40+ integrated brokers worldwide",
   },
   {
     icon: <StorageIcon />,
-    title: "Storage",
-    description: "Serverless storage for any media",
+    title: "Portfolio Management",
+    description: "Unified dashboard for all positions",
   },
   {
     icon: <EdgeIcon />,
-    title: "Edge Functions",
-    description: "Deploy code globally on the edge",
+    title: "Automated Execution",
+    description: "Deploy strategies with one click",
   },
   {
     icon: <RealTimeIcon />,
-    title: "Realtime",
-    description: "Synchronization and Broadcast event",
+    title: "Real-Time Data",
+    description: "Live market feeds and updates",
   },
   {
     icon: <VectorIcon />,
-    title: "Vector",
-    description: "AI toolkit to manage embeddings.",
+    title: "Risk Management",
+    description: "Built-in controls to protect capital",
   },
 ];
 
@@ -79,12 +78,12 @@ const resources = [
 ];
 const blog = [
   {
-    title: "Postgres Realtime location sharing with MapLibre",
-    desc: "Use Supabase Realtime to draw live location data onto the map with MapLibre GL JS.",
+    title: "Automated Options Trading with View Market",
+    desc: "Learn how to deploy complex options strategies using our chart-based builder.",
   },
   {
-    title: "Generate Vector Tiles with PostGIS",
-    desc: "Use PostGIS to programmatically generate Mapbox Vector Tiles and render them with MapLibre GL.",
+    title: "Multi-Broker Arbitrage Strategies",
+    desc: "Discover how to execute arbitrage opportunities across multiple brokers simultaneously.",
   },
 ];
 const CustomerStoryItem = ({ logo, title }: any) => (
@@ -173,12 +172,12 @@ const TitleBar = () => {
 
                         <div>
                           <h3 className="mb-4 text-sm font-semibold text-gray-500">
-                            COMPARE SUPABASE
+                            COMPARE VIEW MARKET
                           </h3>
                           <div className="space-y-2">
-                            <ComparisonLink text="Supabase vs Firebase" />
-                            <ComparisonLink text="Supabase vs Heroku Postgres" />
-                            <ComparisonLink text="Supabase vs Auth0" />
+                            <ComparisonLink text="View Market vs TradingView" />
+                            <ComparisonLink text="View Market vs MetaTrader" />
+                            <ComparisonLink text="View Market vs Streak" />
                           </div>
                         </div>
                       </div>
@@ -285,26 +284,15 @@ const TitleBar = () => {
             </div>
           </div>
           <div className="hidden items-center gap-3 lg:flex">
-            <a
-              className=" flex items-center pr-2 text-xs text-muted-foreground "
-              type="button"
-              href="https://github.com/KrinalSojitra21"
-            >
-              <div className="pr-2 text-foreground">
-                <GithubIcon />
-              </div>
-              62.8k
-            </a>
-            <Button size="xs" variant="outline">
+            <Button size="sm" variant="outline" className="h-10 px-5">
               Sign in
             </Button>
-            <Button size="xs">Start your project</Button>
             {/* <ModeToggle /> */}
           </div>
           <Button
             variant="ghost"
             size="icon"
-            className="text-brand lg:hidden"
+            className="bg-gradient-to-b from-foreground to-foreground-light bg-clip-text text-transparent lg:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <Menu />

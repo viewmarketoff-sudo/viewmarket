@@ -12,14 +12,14 @@ const menuItems = [
   {
     title: "Product",
     items: [
-      "Database",
-      "Auth",
-      "Functions",
-      "Realtime",
-      "Storage",
-      "Vector",
+      "Chart Builder",
+      "Strategy Editor",
+      "Broker Connections",
+      "Backtesting",
+      "Paper Trading",
+      "Risk Management",
       "Pricing",
-      "GA Week",
+      "Platform Status",
     ],
   },
   {
@@ -28,8 +28,8 @@ const menuItems = [
       "Support",
       "System Status",
       "Become a Partner",
-      "Integrations",
-      "Experts",
+      "Broker Integrations",
+      "Trading Experts",
       "Brand Assets / Logos",
       "Security and Compliance",
       "DPA",
@@ -38,35 +38,19 @@ const menuItems = [
     ],
   },
   {
-    title: "Developers",
+    title: "Legal",
     items: [
-      "Documentation",
-      "Changelog",
-      "Contributing",
-      "Open Source",
-      "SupaSquad",
-      "DevTo",
-      "RSS",
+      "Privacy",
+      "Disclaimer",
+      "Terms of Service",
+      "Risk Disclosure",
+      "Cookies",
+      "Refund",
     ],
   },
   {
-    title: "Company",
-    items: [
-      "Blog",
-      "Customer Stories",
-      "Careers",
-      "Company",
-      "General Availability",
-      "Terms of Service",
-      "Privacy Policy",
-      "Privacy Settings",
-      "Acceptable Use Policy",
-      "Support Policy",
-      "Service Level Agreement",
-      "Humans.txt",
-      "Lawyers.txt",
-      "Security.txt",
-    ],
+    title: "Support",
+    items: ["Email Us", "Contact Us"],
   },
 ];
 const FooterSection = () => {
@@ -76,7 +60,7 @@ const FooterSection = () => {
         <div className="mx-auto flex w-full flex-col justify-between gap-10 px-6 py-10 text-sm sm:flex-row md:max-w-[768px] md:px-10 lg:max-w-[1024px] lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px] ">
           <div className="">
             We protect your data.
-            <span className="text-brand"> More on Security</span>
+            <span className="bg-gradient-to-b from-foreground to-foreground-light bg-clip-text text-transparent"> More on Security</span>
           </div>
           <div className="flex flex-col justify-center gap-2 md:flex-row md:items-center md:gap-8">
             <div className="flex gap-3 text-sm font-normal leading-none tracking-tight">
@@ -101,28 +85,28 @@ const FooterSection = () => {
               />
               <div className="flex items-center gap-5  text-muted-foreground">
                 <a
-                  className=" scale-110 hover:text-brand "
+                  className=" scale-110 transition-all hover:bg-gradient-to-b hover:from-foreground hover:to-foreground-light hover:bg-clip-text hover:text-transparent"
                   type="button"
                   href="https://x.com/KrinalSojitra"
                 >
                   <TwitterIcon />
                 </a>
                 <a
-                  className=" scale-110 hover:text-brand "
+                  className=" scale-110 transition-all hover:bg-gradient-to-b hover:from-foreground hover:to-foreground-light hover:bg-clip-text hover:text-transparent"
                   type="button"
                   href="https://github.com/KrinalSojitra21"
                 >
                   <GithubIcon />
                 </a>
                 <a
-                  className=""
+                  className="transition-all hover:bg-gradient-to-b hover:from-foreground hover:to-foreground-light hover:bg-clip-text hover:text-transparent"
                   type="button"
                   href="https://github.com/KrinalSojitra21"
                 >
                   <DiscordIcon />
                 </a>
                 <a
-                  className=""
+                  className="transition-all hover:bg-gradient-to-b hover:from-foreground hover:to-foreground-light hover:bg-clip-text hover:text-transparent"
                   type="button"
                   href="https://github.com/KrinalSojitra21"
                 >
@@ -155,7 +139,7 @@ const FooterSection = () => {
           </div>
           <div className="mt-32 w-full ">
             <div className=" border-t border-border pt-8 text-xs text-muted-foreground ">
-              © Supabase Inc
+              © View Market Inc
             </div>
           </div>
         </div>
