@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/member-delimiter-style */
 import Image from "next/image";
+import Link from "next/link";
 
 import CheckIcon from "@/utils/icons/CheckIcon";
 import DiscordIcon from "@/utils/icons/socialMedia/DiscordIcon";
@@ -40,12 +41,12 @@ const menuItems = [
   {
     title: "Legal",
     items: [
-      "Privacy",
-      "Disclaimer",
-      "Terms of Service",
-      "Risk Disclosure",
-      "Cookies",
-      "Refund",
+      { label: "Privacy", href: "/legal/privacy" },
+      { label: "Disclaimer", href: "/legal/disclaimer" },
+      { label: "Terms of Service", href: "/legal/terms-of-service" },
+      { label: "Risk Disclosure", href: "/legal/risk-disclosure" },
+      { label: "Cookies", href: "/legal/cookies" },
+      { label: "Refund", href: "/legal/refund" },
     ],
   },
   {
@@ -55,7 +56,7 @@ const menuItems = [
 ];
 const FooterSection = () => {
   return (
-    <div className=" w-full bg-popover">
+    <div className=" w-full bg-background">
       <div className=" flex w-full flex-col gap-5 ">
         <div className="mx-auto flex w-full flex-col justify-between gap-10 px-6 py-10 text-sm sm:flex-row md:max-w-[768px] md:px-10 lg:max-w-[1024px] lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px] ">
           <div className="">
@@ -123,14 +124,29 @@ const FooterSection = () => {
                   >
                     <h2>{section.title}</h2>
                     <ul className="flex flex-col gap-2">
-                      {section.items.map((item) => (
-                        <li
-                          className=" text-sm text-muted-foreground"
-                          key={item}
-                        >
-                          {item}
-                        </li>
-                      ))}
+                      {section.items.map((item) => {
+                        if (typeof item === "string") {
+                          return (
+                            <li
+                              className="text-sm text-muted-foreground"
+                              key={item}
+                            >
+                              {item}
+                            </li>
+                          );
+                        }
+
+                        return (
+                          <li key={item.href}>
+                            <Link
+                              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                              href={item.href}
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 ))}

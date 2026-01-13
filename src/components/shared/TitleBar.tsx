@@ -1,7 +1,9 @@
+"use client";
 /* eslint-disable react/jsx-key */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown, Menu } from "lucide-react";
 
 import {
@@ -284,8 +286,8 @@ const TitleBar = () => {
             </div>
           </div>
           <div className="hidden items-center gap-3 lg:flex">
-            <Button size="sm" variant="outline" className="h-10 px-5">
-              Sign in
+            <Button size="sm" variant="outline" className="h-10 px-5" asChild>
+              <Link href="/sign-in">Sign-in</Link>
             </Button>
             {/* <ModeToggle /> */}
           </div>

@@ -38,6 +38,24 @@
       hsl(var(--primary)),
       hsl(#3ecfb2)
     );
+    --sidebar-background: 0 0% 9%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 151 47.1% 40.8%;
+    --sidebar-primary-foreground: 0 0% 95%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20.4%;
+    --sidebar-ring: 142.4 71.8% 29.2%;
+  }
+  .dark {
+    --sidebar-background: 0 0% 9%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 151 47.1% 40.8%;
+    --sidebar-primary-foreground: 0 0% 95%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20.4%;
+    --sidebar-ring: 142.4 71.8% 29.2%;
   }
 }
 
@@ -85,3 +103,12 @@ body {
 /* .break-inside-avoid-column {
   break-inside: avoid-column;
 } */
+/*---break--- */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
