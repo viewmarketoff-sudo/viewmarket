@@ -93,5 +93,5 @@ export function ChartContainer() {
     };
   }, []);
 
-  return <div ref={chartContainerRef} className="w-full h-full" />;
+  return <div ref={chartContainerRef} className="h-full w-full" />;
 }

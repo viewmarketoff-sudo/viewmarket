@@ -30,7 +30,7 @@ export function SimpleDataTable() {
 
   const updateRow = (id: number, field: keyof TableRow, value: string) => {
     setRows(
-      rows.map((row) => (row.id === id ? { ...row, [field]: value } : row))
+      rows.map((row) => (row.id === id ? { ...row, [field]: value } : row)),
     );
   };
 
@@ -52,7 +52,10 @@ export function SimpleDataTable() {
           <TableBody>
             {rows.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={4} className="h-24 text-center text-muted-foreground">
+                <TableCell
+                  colSpan={4}
+                  className="h-24 text-center text-muted-foreground"
+                >
                   No strategies yet.
                 </TableCell>
               </TableRow>
@@ -62,7 +65,9 @@ export function SimpleDataTable() {
                   <TableCell>
                     <Input
                       value={row.name}
-                      onChange={(e) => updateRow(row.id, "name", e.target.value)}
+                      onChange={(e) =>
+                        updateRow(row.id, "name", e.target.value)
+                      }
                       placeholder="Enter name"
                       className="h-8"
                     />
@@ -80,7 +85,9 @@ export function SimpleDataTable() {
                   <TableCell>
                     <Input
                       value={row.value}
-                      onChange={(e) => updateRow(row.id, "value", e.target.value)}
+                      onChange={(e) =>
+                        updateRow(row.id, "value", e.target.value)
+                      }
                       placeholder="0"
                       className="h-8"
                     />

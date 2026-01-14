@@ -203,7 +203,14 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
-  const { open, setOpen, openMobile, setOpenMobile, isMobile, state } = useSidebar();
+  const {
+    open,
+    setOpen,
+    openMobile: _openMobile,
+    setOpenMobile: _setOpenMobile,
+    isMobile: _isMobile,
+    state,
+  } = useSidebar();
   const openedByHover = React.useRef(false);
   const hoverTimeout = React.useRef<NodeJS.Timeout | null>(null);
 
@@ -221,7 +228,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     if (hoverTimeout.current) {
       clearTimeout(hoverTimeout.current);
     }
-    
+
     if (state === "collapsed" && !open) {
       openedByHover.current = true;
       setOpen(true);
@@ -232,7 +239,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     if (hoverTimeout.current) {
       clearTimeout(hoverTimeout.current);
     }
-    
+
     if (openedByHover.current) {
       hoverTimeout.current = setTimeout(() => {
         openedByHover.current = false;
@@ -252,7 +259,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar
       collapsible="icon"
-      className="border-r border-border bg-[hsl(0,0%,11%)] text-foreground dark transition-all duration-300 ease-in-out z-50"
+      className="dark z-50 border-r border-border bg-[hsl(0,0%,11%)] text-foreground transition-all duration-300 ease-in-out"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}

@@ -1,21 +1,17 @@
 import { TrendingDownIcon, TrendingUpIcon } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 
 export function SectionCards() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-      <Card className="aspect-square flex flex-col justify-between p-4 max-w-[250px]">
+    <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <Card className="flex aspect-square max-w-[250px] flex-col justify-between p-4">
         <div className="space-y-2">
           <div className="flex items-start justify-between">
-            <CardDescription className="text-sm text-muted-foreground">Total Revenue</CardDescription>
+            <CardDescription className="text-sm text-muted-foreground">
+              Total Revenue
+            </CardDescription>
             <Badge variant="outline" className="flex gap-1 text-xs">
               <TrendingUpIcon className="size-3" />
               +12.5%
@@ -35,10 +31,12 @@ export function SectionCards() {
         </div>
       </Card>
 
-      <Card className="aspect-square flex flex-col justify-between p-4 max-w-[250px]">
+      <Card className="flex aspect-square max-w-[250px] flex-col justify-between p-4">
         <div className="space-y-2">
           <div className="flex items-start justify-between">
-            <CardDescription className="text-sm text-muted-foreground">New Customers</CardDescription>
+            <CardDescription className="text-sm text-muted-foreground">
+              New Customers
+            </CardDescription>
             <Badge variant="outline" className="flex gap-1 text-xs">
               <TrendingDownIcon className="size-3" />
               -20%
@@ -58,10 +56,12 @@ export function SectionCards() {
         </div>
       </Card>
 
-      <Card className="aspect-square flex flex-col justify-between p-4 max-w-[250px]">
+      <Card className="flex aspect-square max-w-[250px] flex-col justify-between p-4">
         <div className="space-y-2">
           <div className="flex items-start justify-between">
-            <CardDescription className="text-sm text-muted-foreground">Active Accounts</CardDescription>
+            <CardDescription className="text-sm text-muted-foreground">
+              Active Accounts
+            </CardDescription>
             <Badge variant="outline" className="flex gap-1 text-xs">
               <TrendingUpIcon className="size-3" />
               +12.5%
@@ -81,10 +81,12 @@ export function SectionCards() {
         </div>
       </Card>
 
-      <Card className="aspect-square flex flex-col justify-between p-4 max-w-[250px]">
+      <Card className="flex aspect-square max-w-[250px] flex-col justify-between p-4">
         <div className="space-y-2">
           <div className="flex items-start justify-between">
-            <CardDescription className="text-sm text-muted-foreground">Growth Rate</CardDescription>
+            <CardDescription className="text-sm text-muted-foreground">
+              Growth Rate
+            </CardDescription>
             <Badge variant="outline" className="flex gap-1 text-xs">
               <TrendingUpIcon className="size-3" />
               +4.5%
