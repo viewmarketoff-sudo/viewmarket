@@ -51,13 +51,9 @@ const VideoSection = () => {
           <div className=" flex flex-col gap-3 overflow-hidden pt-5 lg:w-[40%]">
             <div>
               <TabsList className="">
-                <TabsTrigger value="Table editor" variant="underline">
-                  Chart Builder
-                </TabsTrigger>
-                <TabsTrigger value="SQL Editor" variant="underline">
-                  Strategy Editor
-                </TabsTrigger>
-                <TabsTrigger value="Auth rules" variant="underline">
+                <TabsTrigger value="Table editor">Chart Builder</TabsTrigger>
+                <TabsTrigger value="SQL Editor">Strategy Editor</TabsTrigger>
+                <TabsTrigger value="Auth rules">
                   Broker Connections
                 </TabsTrigger>{" "}
               </TabsList>{" "}

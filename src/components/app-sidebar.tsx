@@ -1,22 +1,28 @@
 "use client";
 
 import * as React from "react";
+import { usePathname } from "next/navigation";
 import {
   AudioWaveform,
   BookOpen,
   Bot,
+  Bug,
+  Code2,
   Command,
   Frame,
   GalleryVerticalEnd,
   Home,
+  LineChart,
   Map,
   PieChart,
   Settings2,
+  SlidersHorizontal,
   SquareTerminal,
+  TestTube,
 } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
+import { NavDashboard } from "@/components/nav-dashboard";
+import { NavCharts } from "@/components/nav-charts";
 import { NavMain } from "@/components/nav-main";
 import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
@@ -26,10 +32,8 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
   SidebarRail,
+  useSidebar,
 } from "@/components/ui/sidebar";
 
 // This is sample data.
@@ -41,9 +45,9 @@ const data = {
   },
   teams: [
     {
-      name: "ViewMarket",
+      name: "Acme Inc",
       logo: GalleryVerticalEnd,
-      plan: "Free",
+      plan: "Enterprise",
     },
     {
       name: "Acme Corp.",
@@ -56,12 +60,19 @@ const data = {
       plan: "Free",
     },
   ],
+  navDashboard: [
+    {
+      title: "Main",
+      url: "/user-dashboard/main",
+      icon: Home,
+    },
+  ],
   navMain: [
     {
       title: "Playground",
       url: "#",
       icon: SquareTerminal,
-      isActive: true,
+      isActive: false,
       items: [
         {
           title: "History",
@@ -143,11 +154,32 @@ const data = {
       ],
     },
   ],
-  navDashboard: [
+  navCharts: [
     {
-      title: "Home",
-      url: "/user-dashboard/home",
-      icon: Home,
+      title: "My Charts",
+      url: "/user-dashboard/my-charts",
+      icon: LineChart,
+      collapseOnSelect: true,
+    },
+    {
+      title: "Broken",
+      url: "#",
+      icon: Bug,
+    },
+    {
+      title: "Code Editor",
+      url: "#",
+      icon: Code2,
+    },
+    {
+      title: "Strategy Tester",
+      url: "#",
+      icon: TestTube,
+    },
+    {
+      title: "Optimization",
+      url: "#",
+      icon: SlidersHorizontal,
     },
   ],
   projects: [
@@ -171,44 +203,71 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
+  const { open, setOpen, openMobile, setOpenMobile, isMobile, state } = useSidebar();
+  const openedByHover = React.useRef(false);
+  const hoverTimeout = React.useRef<NodeJS.Timeout | null>(null);
+
   const navDashboard = data.navDashboard.map((item) => ({
     ...item,
-    isActive:
-      pathname === item.url || pathname?.startsWith(`${item.url}/`) || false,
+    isActive: pathname === item.url,
   }));
-  const settingsActive =
-    pathname === "/user-dashboard/settings" ||
-    pathname?.startsWith("/user-dashboard/settings/") ||
-    false;
+
+  const navCharts = data.navCharts.map((item) => ({
+    ...item,
+    isActive: pathname === item.url,
+  }));
+
+  const handleMouseEnter = () => {
+    if (hoverTimeout.current) {
+      clearTimeout(hoverTimeout.current);
+    }
+    
+    if (state === "collapsed" && !open) {
+      openedByHover.current = true;
+      setOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (hoverTimeout.current) {
+      clearTimeout(hoverTimeout.current);
+    }
+    
+    if (openedByHover.current) {
+      hoverTimeout.current = setTimeout(() => {
+        openedByHover.current = false;
+        setOpen(false);
+      }, 100);
+    }
+  };
+
+  React.useEffect(() => {
+    return () => {
+      if (hoverTimeout.current) {
+        clearTimeout(hoverTimeout.current);
+      }
+    };
+  }, []);
 
   return (
-    <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
+    <Sidebar
+      collapsible="icon"
+      className="border-r border-border bg-[hsl(0,0%,11%)] text-foreground dark transition-all duration-300 ease-in-out z-50"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...props}
+    >
+      <SidebarHeader className="border-b border-border bg-[hsl(0,0%,11%)]">
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
-      <SidebarContent>
-        <NavMain label="Dashboard" items={navDashboard} />
-        <NavMain label="Platform" items={data.navMain} />
+      <SidebarContent className="bg-[hsl(0,0%,11%)]">
+        <NavDashboard items={navDashboard} />
+        <NavCharts items={navCharts} />
+        <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
       </SidebarContent>
-      <SidebarFooter>
-        <div className="flex flex-col gap-2">
-          <SidebarMenu>
-            <SidebarMenuItem>
-              <SidebarMenuButton
-                tooltip="Settings"
-                isActive={settingsActive}
-                asChild
-              >
-                <Link href="/user-dashboard/settings">
-                  <Settings2 />
-                  <span>Settings</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          </SidebarMenu>
-          <NavUser user={data.user} />
-        </div>
+      <SidebarFooter className="border-t border-border bg-[hsl(0,0%,11%)]">
+        <NavUser user={data.user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/member-delimiter-style */
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
+import NotificationToast from "@/components/shared/NotificationToast";
 import CheckIcon from "@/utils/icons/CheckIcon";
 import DiscordIcon from "@/utils/icons/socialMedia/DiscordIcon";
 import GithubIcon from "@/utils/icons/socialMedia/GithubIcon";
@@ -54,7 +58,62 @@ const menuItems = [
     items: ["Email Us", "Contact Us"],
   },
 ];
+
+const supportEmail = "support@viewmarket.in";
+
 const FooterSection = () => {
+  const [isNoticeVisible, setIsNoticeVisible] = useState(false);
+  const [noticeText, setNoticeText] = useState("support email copied");
+  const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const showNotice = (text: string) => {
+    setNoticeText(text);
+    setIsNoticeVisible(true);
+
+    if (hideTimerRef.current) {
+      clearTimeout(hideTimerRef.current);
+    }
+
+    hideTimerRef.current = setTimeout(() => {
+      setIsNoticeVisible(false);
+    }, 3000);
+  };
+
+  const handleCopyEmail = async () => {
+    try {
+      if (navigator?.clipboard?.writeText) {
+        await navigator.clipboard.writeText(supportEmail);
+        showNotice("support email copied");
+        return;
+      }
+    } catch {
+      // Fall through to legacy clipboard approach.
+    }
+
+    try {
+      const textarea = document.createElement("textarea");
+      textarea.value = supportEmail;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "absolute";
+      textarea.style.left = "-9999px";
+      document.body.appendChild(textarea);
+      textarea.select();
+      const copied = document.execCommand("copy");
+      document.body.removeChild(textarea);
+      showNotice(copied ? "support email copied" : "Unable to copy email");
+    } catch {
+      showNotice("Unable to copy email");
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (hideTimerRef.current) {
+        clearTimeout(hideTimerRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className=" w-full bg-background">
       <div className=" flex w-full flex-col gap-5 ">
@@ -134,7 +193,18 @@ const FooterSection = () => {
                               className="text-sm text-muted-foreground"
                               key={item}
                             >
-                              {item}
+                              {item === "Email Us" ? (
+                                <button
+                                  className="bg-transparent p-0 text-left text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                  type="button"
+                                  onClick={handleCopyEmail}
+                                  aria-label="Copy support email"
+                                >
+                                  {item}
+                                </button>
+                              ) : (
+                                item
+                              )}
                             </li>
                           );
                         }
@@ -163,6 +233,7 @@ const FooterSection = () => {
           </div>
         </div>
       </div>
+      <NotificationToast message={noticeText} visible={isNoticeVisible} />
     </div>
   );
 };
