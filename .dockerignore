@@ -1,0 +1,47 @@
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js build output
+.next
+out
+
+# Environment files (secrets should be in Azure)
+.env
+.env.*
+!.env.example
+
+# IDE and editor
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+
+# Git
+.git
+.gitignore
+
+# Documentation (not needed in container)
+*.md
+!README.md
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+.kiro
+.vercel
+*.pem
+*.log
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
