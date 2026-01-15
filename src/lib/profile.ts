@@ -1,10 +1,17 @@
 import "server-only";
-import { createClient } from "@supabase/supabase-js";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-);
+let supabase: SupabaseClient | null = null;
+
+function getSupabaseClient() {
+  if (!supabase) {
+    supabase = createClient(
+      process.env.SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    );
+  }
+  return supabase;
+}
 
 interface ProfileData {
   authUserId: string;
@@ -16,7 +23,7 @@ interface ProfileData {
 }
 
 export async function upsertProfile(data: ProfileData) {
-  const { error } = await supabase.from("profiles").upsert(
+  const { error } = await getSupabaseClient().from("profiles").upsert(
     {
       auth_user_id: data.authUserId,
       email: data.email ?? null,
@@ -36,7 +43,7 @@ export async function upsertProfile(data: ProfileData) {
 }
 
 export async function getProfileByAuthUserId(authUserId: string) {
-  const { data, error } = await supabase
+  const { data, error } = await getSupabaseClient()
     .from("profiles")
     .select("*")
     .eq("auth_user_id", authUserId)

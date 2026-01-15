@@ -2,14 +2,15 @@
 
 ## GitHub Secrets Required
 
-| Secret | Value |
-|--------|-------|
+| Secret              | Value                              |
+| ------------------- | ---------------------------------- |
 | `AZURE_CREDENTIALS` | Service principal JSON (see below) |
-| `ACR_LOGIN_SERVER` | `acrnextjstrading.azurecr.io` |
-| `ACR_USERNAME` | ACR admin username |
-| `ACR_PASSWORD` | ACR admin password |
+| `ACR_LOGIN_SERVER`  | `acrnextjstrading.azurecr.io`      |
+| `ACR_USERNAME`      | ACR admin username                 |
+| `ACR_PASSWORD`      | ACR admin password                 |
 
 Create service principal:
+
 ```bash
 az ad sp create-for-rbac --name "github-actions-nextjs" --role contributor \
   --scopes /subscriptions/{sub-id}/resourceGroups/rg-nextjs-trading --sdk-auth
@@ -43,18 +44,22 @@ Or use Azure Portal: Container Apps → aca-nextjs-trading → Environment varia
 ## Troubleshooting
 
 **502 Bad Gateway**
+
 - Check target port is 3000: `az containerapp show --name aca-nextjs-trading --resource-group rg-nextjs-trading --query "properties.configuration.ingress.targetPort"`
 - Fix: `az containerapp ingress update --name aca-nextjs-trading --resource-group rg-nextjs-trading --target-port 3000`
 
 **Build Failures**
+
 - Ensure `package-lock.json` is committed
 - Run `npm install` locally and commit lock file
 
 **Missing Environment Variables**
+
 - App crashes on startup → check logs: `az containerapp logs show --name aca-nextjs-trading --resource-group rg-nextjs-trading --type console`
 - Verify all required env vars are set in Azure
 
 **Rollback**
+
 ```bash
 az containerapp update --name aca-nextjs-trading --resource-group rg-nextjs-trading \
   --image acrnextjstrading.azurecr.io/nextjs-trading:{previous-sha}
