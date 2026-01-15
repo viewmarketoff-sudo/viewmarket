@@ -1,8 +1,8 @@
 import React from "react";
+import Link from "next/link";
 import { X } from "lucide-react";
-import Image from "next/image";
 
-import { logoDark } from "@/utils/images";
+import { InfinityLogo } from "@/utils/icons/InfinityLogo";
 
 import { Button } from "../ui/button";
 
@@ -10,7 +10,12 @@ const MobileMenu = ({ onClose }: any) => {
   return (
     <div className="fixed inset-0 z-50 bg-card lg:hidden   ">
       <div className="flex h-14 items-center justify-between px-6">
-        <Image className="h-6 w-auto" src={logoDark} alt="Logo" />
+        <div className="flex items-center gap-2">
+          <InfinityLogo size={24} />
+          <span className="text-gradient text-base font-semibold">
+            View Market
+          </span>
+        </div>
         <Button variant="ghost" size="icon" onClick={onClose}>
           <X />
         </Button>
@@ -19,7 +24,12 @@ const MobileMenu = ({ onClose }: any) => {
         <ul className="">
           <h3 className="border-b border-border py-2 pl-3 pr-4">Product</h3>
           <h3 className=" border-b border-border py-2 pl-3 pr-4">Developers</h3>
-          <h3 className=" border-b border-border py-2 pl-3 pr-4">Pricing</h3>
+          <Link
+            href="/pricing"
+            className="block border-b border-border py-2 pl-3 pr-4 hover:text-foreground"
+          >
+            Pricing
+          </Link>
           <h3 className=" border-b border-border py-2 pl-3 pr-4">Docs</h3>
           <h3 className=" border-b border-border py-2 pl-3 pr-4">Blog</h3>
         </ul>

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   return (
-    <div className="flex flex-col items-center gap-20 px-6 py-32 md:max-w-[768px] lg:max-w-[1024px] lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px]">
+    <div className="flex w-full flex-col items-center gap-20 px-4 py-32 sm:px-6 lg:px-10 xl:px-12 2xl:px-16">
       <h3 className="text-3xl text-foreground-light  ">
         Automate your trading,
         <span className="text-foreground"> deploy from charts</span>

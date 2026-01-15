@@ -40,9 +40,9 @@ function FeatureSection() {
     </li>
   );
   return (
-    <div className="flex w-full flex-col gap-3 overflow-hidden px-6 md:max-w-[768px] lg:max-w-[1024px] lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px] ">
+    <div className="flex w-full flex-col gap-3 overflow-hidden px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16 ">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-12 md:gap-4 xl:gap-3 2xl:gap-6">
-        <Card className="group relative col-span-6 flex h-[400px] w-full flex-col justify-between overflow-hidden lg:col-span-12 lg:flex-row xl:col-span-6">
+        <Card className="group relative col-span-6 flex h-[420px] w-full flex-col justify-between overflow-hidden lg:col-span-12 lg:flex-row xl:col-span-6">
           <div className="flex h-fit flex-col items-center justify-between  gap-5 p-7 lg:h-full  lg:w-[50%] lg:items-start ">
             <div className=" flex flex-col items-center gap-5 lg:items-start">
               <Button variant="outline" size="icon" className=" border-none">
@@ -108,7 +108,7 @@ function FeatureSection() {
             </div>
           </div>
         </Card>
-        <Card className="group col-span-6 flex h-[400px] flex-col items-center justify-between gap-5 overflow-clip pt-7 xl:col-span-3">
+        <Card className="group col-span-6 flex h-[420px] flex-col items-center justify-between gap-5 overflow-clip pt-7 xl:col-span-3">
           <div className=" flex flex-col items-center gap-5">
             {" "}
             <Button variant="outline" size="icon" className=" border-none">
@@ -129,28 +129,28 @@ function FeatureSection() {
               </div>
               <span className="absolute left-6 top-4 h-8 w-8 rounded-full border border-border bg-background text-[10px] font-semibold text-muted-foreground" />
               <span className="absolute right-4 top-10 h-9 w-9 rounded-full border border-border bg-background text-[10px] font-semibold text-muted-foreground" />
-              <span className="absolute left-2 bottom-8 h-9 w-9 rounded-full border border-border bg-background text-[10px] font-semibold text-muted-foreground" />
-              <span className="absolute right-8 bottom-6 h-8 w-8 rounded-full border border-border bg-background text-[10px] font-semibold text-muted-foreground" />
+              <span className="absolute bottom-8 left-2 h-9 w-9 rounded-full border border-border bg-background text-[10px] font-semibold text-muted-foreground" />
+              <span className="absolute bottom-6 right-8 h-8 w-8 rounded-full border border-border bg-background text-[10px] font-semibold text-muted-foreground" />
               <span className="absolute left-[45%] top-[35%] h-px w-10 -rotate-[20deg] bg-border" />
               <span className="absolute right-[32%] top-[45%] h-px w-10 rotate-[20deg] bg-border" />
-              <span className="absolute left-[40%] bottom-[38%] h-px w-12 rotate-[25deg] bg-border" />
-              <span className="absolute right-[36%] bottom-[34%] h-px w-10 -rotate-[20deg] bg-border" />
+              <span className="absolute bottom-[38%] left-[40%] h-px w-12 rotate-[25deg] bg-border" />
+              <span className="absolute bottom-[34%] right-[36%] h-px w-10 -rotate-[20deg] bg-border" />
               <div className="absolute left-4 top-14 rounded-full border border-border bg-background px-2 py-1 text-[10px] text-muted-foreground">
                 NSE
               </div>
               <div className="absolute right-2 top-2 rounded-full border border-border bg-background px-2 py-1 text-[10px] text-muted-foreground">
                 FX
               </div>
-              <div className="absolute left-1 bottom-2 rounded-full border border-border bg-background px-2 py-1 text-[10px] text-muted-foreground">
+              <div className="absolute bottom-2 left-1 rounded-full border border-border bg-background px-2 py-1 text-[10px] text-muted-foreground">
                 CRYPTO
               </div>
-              <div className="absolute right-6 bottom-8 rounded-full border border-border bg-background px-2 py-1 text-[10px] text-muted-foreground">
+              <div className="absolute bottom-8 right-6 rounded-full border border-border bg-background px-2 py-1 text-[10px] text-muted-foreground">
                 NSEFO
               </div>
             </div>
           </div>
         </Card>
-        <Card className="group relative col-span-6 flex h-[400px] flex-col items-center gap-5 overflow-clip pt-7 xl:col-span-3">
+        <Card className="group relative col-span-6 flex h-[420px] flex-col items-center gap-5 overflow-clip pt-7 xl:col-span-3">
           <Button variant="outline" size="icon" className=" border-none">
             <EdgeIcon />
           </Button>
@@ -182,7 +182,7 @@ function FeatureSection() {
             </div>
           </div>
         </Card>
-        <Card className="group col-span-6 flex h-[400px] flex-col items-center gap-5 overflow-clip px-7 pt-7 xl:col-span-3">
+        <Card className="group col-span-6 flex h-[420px] flex-col items-center gap-5 overflow-clip px-7 pt-7 xl:col-span-3">
           <Button variant="outline" size="icon" className=" border-none">
             <StorageIcon />
           </Button>
@@ -239,7 +239,7 @@ function FeatureSection() {
             </div>
           </div>
         </Card>
-        <Card className="group relative col-span-6 flex h-[400px] flex-col items-center justify-start gap-5 overflow-clip p-7 xl:col-span-3">
+        <Card className="group relative col-span-6 flex h-[420px] flex-col items-center justify-start gap-5 overflow-clip p-7 xl:col-span-3">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,hsl(var(--foreground)/0.12),transparent_60%)]" />
           <div className="group z-10 flex h-fit flex-col items-center gap-5 overflow-clip">
             <Button variant="outline" size="icon" className=" border-none">
@@ -271,13 +271,14 @@ function FeatureSection() {
                   key={item.label}
                   className="rounded-full border border-border bg-background/70 px-3 py-1 text-[11px] text-muted-foreground"
                 >
-                  {item.label} · <span className="text-foreground">{item.value}</span>
+                  {item.label} ·{" "}
+                  <span className="text-foreground">{item.value}</span>
                 </div>
               ))}
             </div>
           </div>
         </Card>
-        <Card className="relative col-span-6 flex h-[400px] w-full justify-between lg:col-span-12 xl:col-span-6">
+        <Card className="relative col-span-6 flex h-[420px] w-full justify-between lg:col-span-12 xl:col-span-6">
           <div className="flex w-full flex-col  justify-between gap-5 p-7 lg:w-[50%]">
             <div className=" flex flex-col items-center gap-5 lg:items-start">
               <Button variant="outline" size="icon" className=" border-none">

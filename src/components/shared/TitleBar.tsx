@@ -12,7 +12,8 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-import { logoDark, structure1, structure2, structure3 } from "@/utils/images";
+import { structure1, structure2, structure3 } from "@/utils/images";
+import { InfinityLogo } from "@/utils/icons/InfinityLogo";
 import DatabaseIcon from "@/utils/icons/feature/DatabaseIcon";
 import AuthenticationIcon from "@/utils/icons/feature/AuthenticationIcon";
 import EdgeIcon from "@/utils/icons/feature/EdgeIcon";
@@ -111,19 +112,17 @@ const TitleBar = () => {
 
   return (
     <div className="fixed z-20 h-16 w-full border-b border-border bg-background ">
-      <nav className="mx-auto h-full w-full px-6 sm:px-0 md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1536px]">
-        <div className="mx-auto flex h-full w-full items-center justify-between lg:px-16 xl:px-20">
+      <nav className="h-full w-full px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16">
+        <div className="flex h-full w-full items-center justify-between">
           <div className=" flex gap-8 ">
             <a
-              className="focus-visible:ring-foreground-lighter focus-visible:ring-offset-background-alternative block  focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-4"
-              type="button"
+              className="focus-visible:ring-foreground-lighter focus-visible:ring-offset-background-alternative flex items-center gap-2 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-4"
               href="/"
             >
-              <Image
-                className="z-0 h-6 w-auto  object-cover "
-                src={logoDark}
-                alt=""
-              />
+              <InfinityLogo size={28} />
+              <span className="text-gradient text-lg font-semibold">
+                View Market
+              </span>
             </a>
 
             <div className="hidden lg:flex">
@@ -274,7 +273,9 @@ const TitleBar = () => {
                   </MenubarContent>
                 </MenubarMenu>
                 <MenubarMenu>
-                  <MenubarTrigger>Pricing</MenubarTrigger>
+                  <MenubarTrigger asChild>
+                    <Link href="/pricing">Pricing</Link>
+                  </MenubarTrigger>
                 </MenubarMenu>
                 <MenubarMenu>
                   <MenubarTrigger>Docs</MenubarTrigger>

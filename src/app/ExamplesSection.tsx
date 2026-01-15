@@ -55,7 +55,7 @@ const exampleList = [
 
 const ExamplesSection = () => {
   return (
-    <div className="flex w-full flex-col gap-4 px-6 md:max-w-[768px] lg:max-w-[1024px]  lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px]">
+    <div className="flex w-full flex-col gap-4 px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16">
       <div className=" flex flex-col gap-5 pt-20">
         <div className=" flex flex-col items-center gap-5">
           <div className=" text-4xl text-white ">Start trading in minutes</div>

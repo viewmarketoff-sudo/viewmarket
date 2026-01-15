@@ -8,7 +8,6 @@ import HeroSection from "./HeroSection";
 import ExamplesSection from "./ExamplesSection";
 import InstantAPIsSection from "./InstantAPIsSection";
 import VideoSection from "./VideoSection";
-import InfrastructureSection from "./InfrastructureSection";
 import FeatureSection from "./FeatureSection";
 import CTASection from "./CTASection";
 import FooterSection from "./FooterSection";
@@ -22,7 +21,6 @@ export default function Home() {
       <ExamplesSection />
       <InstantAPIsSection />
       <VideoSection />
-      <InfrastructureSection />
       <CTASection />
       <FooterSection />
     </main>

@@ -13,7 +13,7 @@ import {
 
 const InstantAPIsSection = () => {
   return (
-    <div className=" px-6 pt-64 md:max-w-[768px] lg:max-w-[1024px]  lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px]">
+    <div className="w-full px-4 pt-64 sm:px-6 lg:px-10 xl:px-12 2xl:px-16">
       <div className=" grid grid-cols-12 lg:gap-16 ">
         <div className="col-span-12 pb-8 lg:col-span-5 xl:col-span-5">
           <h3 className=" text-2xl ">

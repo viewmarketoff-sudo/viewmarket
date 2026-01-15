@@ -9,7 +9,7 @@ export default function LegalLayout({
   return (
     <div className="min-h-screen w-full bg-background">
       <LegalHeader />
-      <main className="mx-auto w-full px-6 pb-24 pt-12 md:max-w-[768px] lg:max-w-[1024px] lg:px-16 lg:pt-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px]">
+      <main className="w-full px-4 pb-24 pt-12 sm:px-6 lg:px-10 lg:pt-16 xl:px-12 2xl:px-16">
         <div className="grid gap-8 lg:grid-cols-[260px_1fr]">
           <aside className="h-fit rounded-2xl border border-border bg-card/60 p-6">
             <LegalSideNav />

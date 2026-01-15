@@ -1,17 +1,16 @@
 /* eslint-disable @typescript-eslint/member-delimiter-style */
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import NotificationToast from "@/components/shared/NotificationToast";
 import CheckIcon from "@/utils/icons/CheckIcon";
+import { InfinityLogo } from "@/utils/icons/InfinityLogo";
 import DiscordIcon from "@/utils/icons/socialMedia/DiscordIcon";
 import GithubIcon from "@/utils/icons/socialMedia/GithubIcon";
 import TwitterIcon from "@/utils/icons/socialMedia/TwitterIcon";
 import YoutubeIcon from "@/utils/icons/socialMedia/YoutubeIcon";
-import { logoDark } from "@/utils/images";
 
 const menuItems = [
   {
@@ -117,7 +116,7 @@ const FooterSection = () => {
   return (
     <div className=" w-full bg-background">
       <div className=" flex w-full flex-col gap-5 ">
-        <div className="mx-auto flex w-full flex-col justify-between gap-10 px-6 py-10 text-sm sm:flex-row md:max-w-[768px] md:px-10 lg:max-w-[1024px] lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px] ">
+        <div className="flex w-full flex-col justify-between gap-10 px-4 py-10 text-sm sm:flex-row sm:px-6 lg:px-10 xl:px-12 2xl:px-16 ">
           <div className="">
             We protect your data.
             <span className="bg-gradient-to-b from-foreground to-foreground-light bg-clip-text text-transparent">
@@ -138,14 +137,15 @@ const FooterSection = () => {
           </div>
         </div>
         <div className="h-px w-full bg-gradient-to-r from-transparent via-border to-transparent"></div>
-        <div className="sm:py-18 container relative mx-auto w-full px-6 py-24 md:max-w-[768px] md:py-24 lg:max-w-[1024px] lg:px-16 lg:py-24 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px]">
+        <div className="sm:py-18 relative mx-auto w-full px-4 py-24 sm:px-6 md:py-24 lg:px-10 lg:py-24 xl:px-12 2xl:px-16">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8 xl:col-span-1">
-              <Image
-                className="z-0 h-8 w-auto object-cover"
-                src={logoDark}
-                alt=""
-              />
+              <div className="flex items-center gap-2">
+                <InfinityLogo size={32} />
+                <span className="text-gradient text-xl font-semibold">
+                  View Market
+                </span>
+              </div>
               <div className="flex items-center gap-5  text-muted-foreground">
                 <a
                   className=" scale-110 transition-all hover:bg-gradient-to-b hover:from-foreground hover:to-foreground-light hover:bg-clip-text hover:text-transparent"

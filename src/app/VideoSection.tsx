@@ -4,7 +4,7 @@ import GraterIcon from "@/utils/icons/GraterIcon";
 
 const VideoSection = () => {
   return (
-    <div className="flex w-full flex-col gap-5 px-6 pt-48 md:max-w-[768px] lg:max-w-[1024px] lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px]">
+    <div className="flex w-full flex-col gap-5 px-4 pt-48 sm:px-6 lg:px-10 xl:px-12 2xl:px-16">
       <h3 className=" pb-14 text-2xl ">
         Complete trading platform in your browser
       </h3>

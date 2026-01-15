@@ -7,7 +7,7 @@ import { viewmarketPosgress } from "@/utils/images";
 const LegalHeader = () => {
   return (
     <header className="w-full border-b border-border bg-background">
-      <div className="mx-auto flex h-16 w-full items-center justify-between px-6 md:max-w-[768px] lg:max-w-[1024px] lg:px-16 xl:max-w-[1280px] xl:px-20 2xl:max-w-[1536px]">
+      <div className="flex h-16 w-full items-center justify-between px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm text-foreground-light transition-colors hover:text-foreground"
