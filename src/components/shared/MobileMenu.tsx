@@ -25,11 +25,7 @@ const MobileMenu = ({ onClose }: any) => {
         </ul>
       </nav>
       <div className="absolute bottom-0 left-0 right-0 flex gap-5 bg-background p-4">
-        <Button
-          className="w-full bg-secondary text-xs"
-          size="sm"
-          variant="outline"
-        >
+        <Button className="w-full text-xs" size="sm">
           Sign in
         </Button>
         <Button className="w-full text-xs" size="sm">

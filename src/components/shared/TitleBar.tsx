@@ -286,7 +286,7 @@ const TitleBar = () => {
             </div>
           </div>
           <div className="hidden items-center gap-3 lg:flex">
-            <Button size="sm" variant="outline" className="h-10 px-5" asChild>
+            <Button size="sm" className="h-10 px-5" asChild>
               <Link href="/sign-in">Sign-in</Link>
             </Button>
             {/* <ModeToggle /> */}
