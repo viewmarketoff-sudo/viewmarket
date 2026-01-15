@@ -23,21 +23,23 @@ interface ProfileData {
 }
 
 export async function upsertProfile(data: ProfileData) {
-  const { error } = await getSupabaseClient().from("profiles").upsert(
-    {
-      auth_user_id: data.authUserId,
-      email: data.email ?? null,
-      name: data.name ?? null,
-      avatar_url: data.avatarUrl ?? null,
-      provider: data.provider,
-      provider_id: data.providerId,
-      updated_at: new Date().toISOString(),
-    },
-    {
-      onConflict: "provider,provider_id",
-      ignoreDuplicates: false,
-    },
-  );
+  const { error } = await getSupabaseClient()
+    .from("profiles")
+    .upsert(
+      {
+        auth_user_id: data.authUserId,
+        email: data.email ?? null,
+        name: data.name ?? null,
+        avatar_url: data.avatarUrl ?? null,
+        provider: data.provider,
+        provider_id: data.providerId,
+        updated_at: new Date().toISOString(),
+      },
+      {
+        onConflict: "provider,provider_id",
+        ignoreDuplicates: false,
+      },
+    );
 
   if (error) throw error;
 }

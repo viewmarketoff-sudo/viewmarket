@@ -39,7 +39,7 @@ const ParticlesBackground = () => {
       {particles.map((particle, i) => (
         <motion.div
           key={i}
-          className="absolute h-1 w-1 rounded-full bg-primary/40"
+          className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-foreground/40 to-foreground-light/40"
           initial={{
             x: particle.initialX,
             y: particle.initialY,
@@ -99,7 +99,7 @@ const Floating404 = () => {
       >
         {/* Glow effect behind text */}
         <div className="absolute inset-0 opacity-30 blur-3xl">
-          <div className="select-none bg-gradient-to-b from-primary to-primary/50 bg-clip-text text-[180px] font-bold text-transparent sm:text-[220px] md:text-[280px]">
+          <div className="select-none bg-gradient-to-b from-foreground to-foreground-light bg-clip-text text-[180px] font-bold text-transparent sm:text-[220px] md:text-[280px]">
             404
           </div>
         </div>
@@ -115,7 +115,7 @@ const Floating404 = () => {
             4
           </span>
           <motion.span
-            className="inline-block bg-gradient-to-b from-primary to-primary/70 bg-clip-text text-transparent"
+            className="inline-block bg-gradient-to-b from-foreground to-foreground-light bg-clip-text text-transparent"
             animate={{
               y: [0, -10, 0],
             }}

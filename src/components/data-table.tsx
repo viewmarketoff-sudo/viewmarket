@@ -191,7 +191,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
         className="flex gap-1 px-1.5 text-muted-foreground [&_svg]:size-3"
       >
         {row.original.status === "Done" ? (
-          <CheckCircle2Icon className="text-green-500 dark:text-green-400" />
+          <CheckCircle2Icon className="bg-gradient-to-b from-foreground to-foreground-light bg-clip-text text-transparent" />
         ) : (
           <LoaderIcon />
         )}
@@ -647,11 +647,11 @@ const chartData = [
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "var(--primary)",
+    color: "hsl(0, 0%, 95%)",
   },
   mobile: {
     label: "Mobile",
-    color: "var(--primary)",
+    color: "hsl(0, 0%, 79%)",
   },
 } satisfies ChartConfig;
 

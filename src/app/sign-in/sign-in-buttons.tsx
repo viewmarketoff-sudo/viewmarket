@@ -15,9 +15,15 @@ const GoogleIcon = () => (
       d="M23.5 12.3c0-.8-.1-1.6-.3-2.3H12v4.4h6.4a5.5 5.5 0 0 1-2.4 3.6v3h3.8c2.2-2 3.7-5 3.7-8.7Z"
       fill="#4285F4"
     />
+    <defs>
+      <linearGradient id="googleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="hsl(0, 0%, 95%)" stopOpacity="1" />
+        <stop offset="100%" stopColor="hsl(0, 0%, 63%)" stopOpacity="1" />
+      </linearGradient>
+    </defs>
     <path
       d="M12 24c3.2 0 5.9-1.1 7.9-3l-3.8-3c-1 .7-2.4 1.2-4.1 1.2-3.1 0-5.7-2.1-6.7-4.9h-3.9v3.1A12 12 0 0 0 12 24Z"
-      fill="#34A853"
+      fill="url(#googleGradient)"
     />
     <path
       d="M5.3 14.3A7.2 7.2 0 0 1 5 12c0-.8.1-1.6.3-2.3V6.6H1.4A12 12 0 0 0 0 12c0 2 .5 4 1.4 5.6l3.9-3.3Z"
