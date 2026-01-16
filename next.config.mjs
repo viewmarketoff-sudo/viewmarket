@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
-  // Fix for middleware .nft.json issue in Next.js 16 standalone builds
+  // Ensure middleware is included in standalone output file tracing
   experimental: {
     outputFileTracingIncludes: {
       '/': ['./middleware.ts'],
