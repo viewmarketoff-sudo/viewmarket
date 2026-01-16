@@ -27,6 +27,7 @@ Trading platform | Next.js 16 App Router, React 18, TypeScript 5 | Tailwind + sh
 - `mcp_supabase_get_advisors` → Security/performance checks
 
 **→ Always use Supabase MCP for DB operations, never write raw SQL in code files**
+**→ When a user asks for anything database-related, immediately execute via Supabase MCP (queries, migrations, counts, logs) without asking which database or whether to proceed—assume the primary Supabase project unless the user specifies otherwise.**
 
 ### Context7 MCP → Documentation & Code Examples
 

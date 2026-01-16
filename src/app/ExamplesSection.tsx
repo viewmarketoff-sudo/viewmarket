@@ -51,6 +51,16 @@ const exampleList = [
     desc: "Cross-exchange arbitrage bot template with real-time price monitoring and automated execution.",
     icons: [<DenoIcon key={0} />],
   },
+  {
+    name: "Risk Alerts Dashboard",
+    desc: "Event-driven risk monitor with configurable alerts for drawdowns, slippage, and latency spikes.",
+    icons: [<NextJsIcon key={0} />, <OpenAIIcon key={1} />],
+  },
+  {
+    name: "Portfolio Rebalancer",
+    desc: "Automated rebalancing engine with threshold bands, tax lots awareness, and broker routing.",
+    icons: [<NextJsIcon key={0} />, <StripeIcon key={1} />],
+  },
 ];
 
 const ExamplesSection = () => {
@@ -81,7 +91,7 @@ const ExamplesSection = () => {
               return (
                 <Card
                   key={index}
-                  className="false group group col-span-12 flex flex-col justify-between gap-4 overflow-clip hover:border-muted-foreground lg:col-span-6 xl:col-span-4"
+                  className="false group group col-span-12 flex flex-col justify-between gap-4 overflow-clip hover:border-muted-foreground lg:col-span-6 xl:col-span-3"
                 >
                   <div className="relative flex  aspect-[3/1]  items-center justify-center overflow-hidden ">
                     <Image

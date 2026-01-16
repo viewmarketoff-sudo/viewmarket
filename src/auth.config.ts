@@ -19,13 +19,12 @@ export const authConfig: NextAuthConfig = {
   },
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
+      // Public routes are handled via middleware matcher; when we are here, require a session
       const isLoggedIn = !!auth?.user;
-      const isOnDashboard = nextUrl.pathname.startsWith("/user-dashboard");
+      const isAuthRoute = nextUrl.pathname.startsWith("/api/auth");
 
-      if (isOnDashboard) {
-        return isLoggedIn;
-      }
-      return true;
+      if (isAuthRoute) return true;
+      return isLoggedIn;
     },
   },
 };

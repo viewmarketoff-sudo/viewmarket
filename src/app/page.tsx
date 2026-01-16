@@ -1,18 +1,24 @@
-"use client";
-import React from "react";
+import { redirect } from "next/navigation";
 
 import "./globals.css";
 import TitleBar from "@/components/shared/TitleBar";
+import { getCurrentUser } from "@/lib/auth";
 
-import HeroSection from "./HeroSection";
+import CTASection from "./CTASection";
 import ExamplesSection from "./ExamplesSection";
+import FeatureSection from "./FeatureSection";
+import HeroSection from "./HeroSection";
 import InstantAPIsSection from "./InstantAPIsSection";
 import VideoSection from "./VideoSection";
-import FeatureSection from "./FeatureSection";
-import CTASection from "./CTASection";
 import FooterSection from "./FooterSection";
 
-export default function Home() {
+export default async function Home() {
+  const user = await getCurrentUser();
+
+  if (user) {
+    redirect("/user-dashboard/main");
+  }
+
   return (
     <main className="flex min-h-screen  w-full flex-col items-center gap-10 ">
       <TitleBar />

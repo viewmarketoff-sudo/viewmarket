@@ -22,6 +22,7 @@ type PriceInfo = {
   amount: number;
   display: string;
   descriptor: string;
+  unit: string;
 };
 
 type PlanConfig = {
@@ -42,14 +43,14 @@ const BillingToggle = ({
   value: BillingCycle;
   onChange: (cycle: BillingCycle) => void;
 }) => (
-  <div className="inline-flex items-center overflow-hidden rounded-full border border-border bg-card text-sm font-medium shadow-inner">
+  <div className="inline-flex items-center overflow-hidden rounded-full border border-border bg-card text-base font-semibold shadow-inner">
     {(["monthly", "yearly"] as BillingCycle[]).map((cycle) => (
       <button
         key={cycle}
         type="button"
         onClick={() => onChange(cycle)}
         className={cn(
-          "px-5 py-1.5 capitalize transition-all focus-visible:outline-none",
+          "px-6 py-2 capitalize transition-all focus-visible:outline-none md:px-7 md:py-2.5",
           value === cycle
             ? "bg-gradient-to-b from-foreground to-foreground-light text-background"
             : "text-foreground-light",
@@ -247,19 +248,20 @@ const getPlanPrice = (
   const amount =
     cycle === "monthly"
       ? plan.monthlyAmount
-      : Math.round(plan.monthlyAmount * (1 - DISCOUNT_RATE));
+      : Math.round(plan.monthlyAmount * 12 * (1 - DISCOUNT_RATE));
 
   const descriptor =
     plan.monthlyAmount === 0
       ? "Free forever"
       : cycle === "monthly"
         ? "per month, billed monthly"
-        : `per month (${Math.round(DISCOUNT_RATE * 100)}% off), billed yearly`;
+        : `per year (${Math.round(DISCOUNT_RATE * 100)}% off), billed yearly`;
 
   return {
     amount,
     display: formatINR(amount),
     descriptor,
+    unit: cycle === "monthly" ? "/mo" : "/yr",
   };
 };
 
@@ -276,10 +278,10 @@ const PricingPage = () => {
               <p className="text-xs uppercase tracking-[0.3em] text-foreground-light">
                 COMPARE PRICES & FEATURES
               </p>
-              <h2 className="mt-3 text-2xl font-semibold text-foreground sm:text-3xl">
+              <h2 className="mt-3 text-3xl font-semibold text-foreground sm:text-4xl">
                 See how each plan scales depth, automation, and coverage
               </h2>
-              <p className="mt-2 text-sm text-foreground-light">
+              <p className="mt-3 text-base text-foreground-light sm:text-lg">
                 Switch billing to match your workflow and quickly scan which
                 capabilities unlock per plan tier.
               </p>
@@ -288,11 +290,24 @@ const PricingPage = () => {
               <p className="text-xs uppercase tracking-[0.3em] text-foreground-light">
                 Compare plans
               </p>
-              <BillingToggle value={billingCycle} onChange={setBillingCycle} />
+              <div className="mx-auto flex w-full flex-wrap items-center justify-center gap-3">
+                <BillingToggle
+                  value={billingCycle}
+                  onChange={setBillingCycle}
+                />
+              </div>
+              <div className="flex items-center gap-3 rounded-full border border-emerald-500/50 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-200 shadow-inner">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/20 text-xs font-bold text-emerald-100">
+                  20%
+                </span>
+                <span className="font-semibold text-emerald-100">
+                  Yearly billing already includes 20% off.
+                </span>
+              </div>
             </div>
             <div className="rounded-[28px] border border-border/70 bg-background p-[1px] shadow-[0_30px_120px_-80px_rgba(0,0,0,0.9)]">
               <div className="rounded-[26px] border border-border/70 bg-background text-foreground">
-                <div className="grid grid-cols-[1.6fr_repeat(5,1fr)] items-center gap-3 px-5 py-6 text-left text-sm font-semibold">
+                <div className="grid grid-cols-[1.6fr_repeat(5,1fr)] items-center gap-4 px-6 py-7 text-left text-base font-semibold">
                   <span className="text-base">Features</span>
                   {planOrder.map((planName) => {
                     const plan = plans.find((item) => item.name === planName)!;
@@ -300,21 +315,25 @@ const PricingPage = () => {
                     const action = comparatorActions[planName];
 
                     return (
-                      <div key={planName} className="space-y-2 text-center">
-                        <div className="text-base font-semibold">
-                          {planName}
-                        </div>
+                      <div
+                        key={planName}
+                        className="space-y-3 rounded-xl border border-border/50 bg-card/40 p-4 text-center"
+                      >
+                        <div className="text-xl font-semibold">{planName}</div>
                         {priceInfo ? (
-                          <div className="text-xs text-foreground-light">
+                          <div className="text-lg font-semibold text-foreground">
                             {priceInfo.display}
-                            /mo
+                            {priceInfo.unit}
                           </div>
                         ) : (
-                          <div className="text-xs text-foreground-light">
+                          <div className="text-lg font-semibold text-foreground">
                             Contact sales
                           </div>
                         )}
-                        <Button size="sm" className="mt-1 w-full text-xs">
+                        <Button
+                          size="default"
+                          className="mt-1 w-full text-base"
+                        >
                           {action.label}
                         </Button>
                       </div>
