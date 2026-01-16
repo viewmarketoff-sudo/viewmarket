@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  output: "standalone",
   // Ensure middleware is included in standalone output file tracing
-  experimental: {
-    outputFileTracingIncludes: {
-      '/': ['./middleware.ts'],
-    },
+  outputFileTracingIncludes: {
+    "/": ["./middleware.ts"],
   },
   // Security headers
   async headers() {
