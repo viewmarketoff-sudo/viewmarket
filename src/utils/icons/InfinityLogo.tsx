@@ -1,17 +1,15 @@
-import { useId } from "react";
-
 interface InfinityLogoProps {
   className?: string;
   size?: number;
+  id?: string;
 }
 
 export const InfinityLogo = ({
   className = "",
   size = 32,
+  id = "infinity-gradient",
 }: InfinityLogoProps) => {
-  const id = useId();
-  const gradientId = `infinity-gradient-${id}`;
-
+  const gradientId = id;
   return (
     <svg
       width={size}

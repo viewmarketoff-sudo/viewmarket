@@ -6,7 +6,7 @@
   :root {
     --radius: 0.5rem;
     --brand-default: 0 0% 9%;
-    --background: 0 0% 100%; /* white background */
+    --background: 240 4.8% 95.9%; /* sidebar accent background */
     --foreground: 0 0% 9%; /* dark text */
     --foreground-light: 0 0% 45%; /* muted text */
     --card: 0 0% 98%; /* light card */
@@ -104,12 +104,7 @@
 }
 body {
   color: hsl(var(--card-foreground));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: hsl(var(--background));
   font-family: "circular";
 }
 

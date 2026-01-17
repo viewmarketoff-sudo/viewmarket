@@ -3,14 +3,11 @@
 import * as React from "react";
 import { usePathname } from "next/navigation";
 import {
-  AudioWaveform,
   BookOpen,
   Bot,
   Bug,
   Code2,
-  Command,
   Frame,
-  GalleryVerticalEnd,
   Home,
   LineChart,
   Map,
@@ -26,6 +23,7 @@ import { NavCharts } from "@/components/nav-charts";
 import { NavMain } from "@/components/nav-main";
 import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
+import { InfinityLogo } from "@/utils/icons/InfinityLogo";
 import { TeamSwitcher } from "@/components/team-switcher";
 import {
   Sidebar,
@@ -45,19 +43,9 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
+      name: "View Market",
+      logo: InfinityLogo,
+      plan: "Workspace",
     },
   ],
   navDashboard: [

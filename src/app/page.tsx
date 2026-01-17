@@ -5,7 +5,7 @@ import { getCurrentUser } from "@/lib/auth";
 import LandingHero from "@/components/landing/LandingHero";
 import LandingFeatures from "@/components/landing/LandingFeatures";
 import LandingIntegrations from "@/components/landing/LandingIntegrations";
-import LandingContent from "@/components/landing/LandingContent";
+import LandingHighlights from "@/components/landing/LandingHighlights";
 import LandingCTA from "@/components/landing/LandingCTA";
 import LandingFooter from "@/components/landing/LandingFooter";
 
@@ -17,7 +17,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative bg-sidebar-accent">
       {/* Curved border wrapper for entire page */}
       <div className="absolute inset-1 -z-10 overflow-hidden rounded-3xl border border-black/10 dark:border-white/5 lg:rounded-[3rem]">
         <video
@@ -33,7 +33,7 @@ export default async function Home() {
       <LandingHero />
       <LandingFeatures />
       <LandingIntegrations />
-      <LandingContent />
+      <LandingHighlights />
       <LandingCTA />
       <LandingFooter />
     </div>

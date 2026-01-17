@@ -44,24 +44,35 @@ export function ChartContainer() {
   React.useEffect(() => {
     if (!chartContainerRef.current) return;
 
+    const getCssVarColor = (name: string, fallback: string) => {
+      const value = getComputedStyle(document.documentElement)
+        .getPropertyValue(name)
+        .trim();
+      return value ? `hsl(${value})` : fallback;
+    };
+
+    const backgroundColor = getCssVarColor("--background", "#ffffff");
+    const textColor = getCssVarColor("--foreground", "#111111");
+    const gridColor = getCssVarColor("--border", "#e5e5e5");
+
     const chart = createChart(chartContainerRef.current, {
       layout: {
-        background: { color: "#1c1c1c" },
-        textColor: "#d1d4dc",
+        background: { color: backgroundColor },
+        textColor,
         attributionLogo: false,
       },
       grid: {
-        vertLines: { color: "#2e2e2e" },
-        horzLines: { color: "#2e2e2e" },
+        vertLines: { color: gridColor },
+        horzLines: { color: gridColor },
       },
       crosshair: {
         mode: 0,
       },
       rightPriceScale: {
-        borderColor: "#2e2e2e",
+        borderColor: gridColor,
       },
       timeScale: {
-        borderColor: "#2e2e2e",
+        borderColor: gridColor,
         timeVisible: true,
       },
     });
