@@ -1,168 +1,57 @@
 # View Market - AI Agent Rules
 
-## Context
+## 1. ⚡ Communication Protocol (NON-TECHNICAL)
 
-Trading platform | Next.js 16 App Router, React 18, TypeScript 5 | Tailwind + shadcn/ui + Radix | Recharts, lightweight-charts | Zod validation
+**Goal**: Result-oriented workflow for a non-coding user.
 
-## Commands
+1.  **PLAN (Simple English)**: Explain _what_ you will do and _why_. **Get Approval.**
+2.  **EXECUTE (Autonomous)**: Handle all technical details (coding, db, git) without nagging.
+3.  **REPORT (Visual)**: Show "Before vs After".
+    - **Visual**: Screenshots for UI.
+    - **Functional**: "Users can now [Action]."
 
-`npm run dev` | `npm run build` | `npm run lint:fix` | `npm run prettier:fix`
+## 2. Technical Stack & Architecture
 
-**⚠️ DO NOT run any commands (dev, build, lint, etc.) unless user explicitly requests it.**
+- **Structure**: **Scalable Monolith** (Single Codebase).
+- **Stack**: Next.js 14 (App Router), TypeScript, Tailwind, Supabase (DB Only), NextAuth.
+- **Security Rule**: **"Zero Leakage"**. Logic lives in `src/actions/` (Server Actions).
 
----
+## 3. Agent Skills Registry
 
-## MCP Servers (IMPORTANT)
+Load these `.agent/skills/[name]/SKILL.md` files for specialized tasks.
 
-### Supabase MCP → Database Operations
+| Skill                | Use When...                   | Key Rule                               |
+| :------------------- | :---------------------------- | :------------------------------------- |
+| **Fullstack Expert** | Building end-to-end features. | DB -> Backend -> UI (Phase 1-2-3).     |
+| **Frontend Expert**  | Building UI/Components.       | Server Components by Default.          |
+| **Supabase Ops**     | DB Changes & Data.            | **Migrations ONLY** for schema.        |
+| **Chrome DevTools**  | Verifying UI & Debugging.     | **Visual Verification** (Screenshots). |
+| **GitHub Ops**       | PRs & Code Search.            | **Master of Git** (Branches/PRs).      |
+| **Context7 Docs**    | Checking Syntax.              | **Don't Guess** - Query Docs.          |
+| **Perplexity**       | Researching Solutions.        | **Find Best Practice** before coding.  |
 
-**USE FOR**: All database work - queries, migrations, tables, RLS policies, edge functions
+## 4. Development Rules
 
-- `mcp_supabase_execute_sql` → Run SQL queries directly
-- `mcp_supabase_apply_migration` → Create tables, policies, indexes
-- `mcp_supabase_list_tables` → Check existing schema
-- `mcp_supabase_generate_typescript_types` → Generate types after schema changes
-- `mcp_supabase_deploy_edge_function` → Deploy serverless functions
-- `mcp_supabase_get_logs` → Debug issues
-- `mcp_supabase_get_advisors` → Security/performance checks
+### Architecture (The "One Codebase" Rule)
 
-**→ Always use Supabase MCP for DB operations, never write raw SQL in code files**
-**→ When a user asks for anything database-related, immediately execute via Supabase MCP (queries, migrations, counts, logs) without asking which database or whether to proceed—assume the primary Supabase project unless the user specifies otherwise.**
+- **`src/app`**: Routes & Pages (Server Components).
+- **`src/actions`**: **The Backend**. Secure Server Actions with Zod validation.
+- **`src/components`**: Feature-based UI (`src/components/features/[feature]`).
+- **`supabase/`**: DB Migrations.
 
-### Context7 MCP → Documentation & Code Examples
+### Security (Non-Negotiable)
 
-**USE FOR**: Finding docs, code examples, API references for any library/framework
+- **No API Keys in Client**: Never use `NEXT_PUBLIC_` for secrets.
+- **Validation**: Zod validate EVERY input on the server (`src/actions`).
+- **Auth**: Check `auth()` session in every Server Action.
 
-1. `mcp_context7_resolve_library_id` → Find library ID first
-2. `mcp_context7_query_docs` → Query docs with specific questions
+### Action-First Protocol
 
-**→ Use when needing current docs for Next.js, React, Tailwind, shadcn, or any package**
+- **Constructive**: Creating tables/features -> **Auto-Execute**.
+- **Destructive**: Deleting data -> **Ask First**.
 
-### Playwright MCP → Browser Testing
+## 5. Global Code Standards
 
-**⚠️ ONLY use when user explicitly asks to test in browser**
-
-- `mcp_mcp_playwright_browser_navigate` → Open URLs
-- `mcp_mcp_playwright_browser_snapshot` → Get page structure
-- `mcp_mcp_playwright_browser_click` → Click elements
-- `mcp_mcp_playwright_browser_type` → Type text
-- `mcp_mcp_playwright_browser_take_screenshot` → Capture screenshots
-
-**→ DO NOT use Playwright unless user specifically requests browser testing**
-
-### Perplexity MCP → Web Search & Verification
-
-**USE FOR**: Searching web, confirming information, finding current data
-
-- `mcp_perplexity_ask_perplexity_ask` → AI-powered search with context
-
-**→ Use when needing to verify info, search for solutions, or get current data**
-
-### GitHub MCP → Repository Operations
-
-**USE FOR**: GitHub repo operations when user requests
-
-- `mcp_github_get_file_contents` → Read files from repos
-- `mcp_github_search_code` → Search code across GitHub
-- `mcp_github_create_pull_request` → Create PRs
-- `mcp_github_list_issues` → List/search issues
-- `mcp_github_push_files` → Push code changes
-
-**→ Use when user asks to interact with GitHub repos**
-
-## Structure
-
-```
-src/app/          → Pages, layouts, route handlers
-src/components/ui → shadcn primitives
-src/components/   → Feature components
-src/lib/          → Utilities (cn helper)
-src/hooks/        → Custom hooks
-src/utils/        → Icons, images
-```
-
-## Code Style
-
-- **Naming**: dirs=`lowercase-dashes` | components=`PascalCase` | vars=`isLoading, hasError`
-- **Imports**: `@/` alias, grouped: builtin → external → internal → relative
-- **TypeScript**: interfaces > types, no enums (use `as const`), no `any`
-- **Exports**: named exports, no default
-- **File order**: Component → Subcomponents → Helpers → Constants → Types
-
-## Components
-
-- Functional components only, no classes
-- Use `cn()` for class merging
-- Composition over prop drilling
-- `forwardRef` for UI primitives with `displayName`
-- CVA for variants
-
-## Server vs Client
-
-- **Default**: Server Components (RSC)
-- **`'use client'`**: Only for useState, useEffect, event handlers, browser APIs
-- Keep client components at leaf nodes
-- Fetch data in Server Components, pass to Client as props
-
-## Security (CRITICAL)
-
-- **Server-only**: API keys, DB queries, secrets → never in client bundle
-- **`import 'server-only'`** in sensitive modules
-- **Server Actions** for mutations (hidden from Network tab)
-- **DTOs**: Return only needed fields, never raw DB objects
-- **Validation**: Zod on server, client validation is UX only
-- **Auth check** in every Server Action
-- **No `NEXT_PUBLIC_`** for secrets
-
-## Data Fetching
-
-```tsx
-// Server Component fetches
-async function Page() {
-  const data = await db.query(); // Server-only
-  return <ClientComponent data={data} />;
-}
-
-// Server Action for mutations
-("use server");
-export async function action(formData: FormData) {
-  const user = await getCurrentUser();
-  if (!user) unauthorized();
-  const validated = Schema.safeParse(formData);
-  if (!validated.success)
-    return { errors: validated.error.flatten().fieldErrors };
-  return await mutate(validated.data);
-}
-```
-
-## Error Handling
-
-- Guard clauses + early returns (errors first, happy path last)
-- `error.tsx` for boundaries (Client Component)
-- `loading.tsx` for Suspense states
-- Expected errors → return as values | Unexpected → let boundaries catch
-- User-friendly messages, log internals
-
-## Performance
-
-- Minimize `'use client'`, `useEffect`, `useState`
-- `<Image>` with `priority` for LCP, always set dimensions
-- `dynamic()` for heavy components, `ssr: false` for client-only libs
-- `<Suspense>` wrap client components
-- Cache with `unstable_cache`, revalidate strategies
-
-## Accessibility
-
-- Semantic HTML: `<button>`, `<nav>`, `<main>`, `<label htmlFor>`
-- ARIA only when HTML insufficient
-- Keyboard accessible: `onKeyDown` for Enter/Space
-- Visible `:focus-visible` outlines
-- 4.5:1 contrast ratio
-- `aria-live` for dynamic content
-
-## Testing
-
-- RTL: `getByRole`, `getByLabelText` (accessible queries)
-- Test keyboard navigation with `userEvent`
-- Validate Server Actions: auth, validation errors
-- `eslint-plugin-jsx-a11y` + `@axe-core/react`
+- **Naming**: `PascalCase` for Components, `kebab-case` for files/folders.
+- **Type Safety**: No `any`. Share types (DB -> UI) strictly.
+- **Imports**: Use `@/` alias. Group: Built-in -> External -> Internal.
