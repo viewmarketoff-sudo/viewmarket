@@ -9,13 +9,26 @@ Use this skill to fetch authoritative documentation and examples for libraries, 
 
 **Core Rule**: DO NOT HALLUCINATE SYNTAX. If you are unsure, QUERY THE DOCS.
 
+## ⚠️ CRITICAL OPERATIONAL RULE
+
+**DO NOT run any of the following commands unless the user EXPLICITLY requests them:**
+
+- `npm run build` or any build commands
+- `npm run dev` or any development servers
+- `npm run lint` or any lint servers
+- Any other build/development/lint processes
+
+**Why**: These commands should only be executed when the user specifically asks for verification, deployment preparation, or testing. Auto-running them wastes resources and disrupts the workflow.
+
 ## Communication Protocol (CRITICAL)
 
-1.  **Plan**: "I will check the documentation for [Library] to see how to do [Task]."
-2.  **Execute**: Manage library resolution and queries internally.
+1.  **Plan**: "I will check the documentation for [Library] to see how to do [Task]." **Then immediately execute.**
+2.  **Execute** (without waiting for approval): Manage library resolution and queries internally.
 3.  **Report**:
     - **Learned**: "I found the correct way to do it." (Summarize briefly)
     - **Action**: "I will now implement this pattern."
+
+**IMPORTANT**: Do NOT ask for user approval before executing. Present the plan and proceed immediately.
 
 ## 1. Documentation Lookup
 

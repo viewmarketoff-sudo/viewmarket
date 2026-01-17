@@ -7,13 +7,26 @@ description: Intelligent problem solving, architectural advice, and error debugg
 
 Use this skill to solve complex problems, research technologies, and find architectural best practices.
 
+## ⚠️ CRITICAL OPERATIONAL RULE
+
+**DO NOT run any of the following commands unless the user EXPLICITLY requests them:**
+
+- `npm run build` or any build commands
+- `npm run dev` or any development servers
+- `npm run lint` or any lint servers
+- Any other build/development/lint processes
+
+**Why**: These commands should only be executed when the user specifically asks for verification, deployment preparation, or testing. Auto-running them wastes resources and disrupts the workflow.
+
 ## Communication Protocol (CRITICAL)
 
-1.  **Plan**: "I will research how to [Problem] and find the best solution."
-2.  **Execute**: Perform search and reasoning autonomously.
+1.  **Plan**: "I will research how to [Problem] and find the best solution." **Then immediately execute.**
+2.  **Execute** (without waiting for approval): Perform search and reasoning autonomously.
 3.  **Report**:
     - **The Answer**: (Simple summary) "The best way is to use [Library X]."
     - **Why**: "It is faster and easier to use." (Avoid technical deep dives unless asked)
+
+**IMPORTANT**: Do NOT ask for user approval before executing. Present the plan and proceed immediately.
 
 ## 1. Error Investigation
 

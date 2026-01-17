@@ -7,14 +7,27 @@ description: Expert workflows for Next.js 14, TypeScript, Tailwind, and Shadcn/U
 
 Use this skill to build premium, performant, and accessible UI components in Next.js 14.
 
+## ⚠️ CRITICAL OPERATIONAL RULE
+
+**DO NOT run any of the following commands unless the user EXPLICITLY requests them:**
+
+- `npm run build` or any build commands
+- `npm run dev` or any development servers
+- `npm run lint` or any lint servers
+- Any other build/development/lint processes
+
+**Why**: These commands should only be executed when the user specifically asks for verification, deployment preparation, or testing. Auto-running them wastes resources and disrupts the workflow.
+
 ## Communication Protocol (CRITICAL)
 
-1.  **Plan**: "I will create a [Component Name] that allows users to [Action]." (Show a design thought if needed).
+1.  **Plan**: "I will create a [Component Name] that allows users to [Action]." (Show a design thought if needed). **Then immediately execute.**
     - _Design Check_: "I'll use a [Layout Strategy] with [Colors/Style]."
-2.  **Execute**: Handle file creation, styling, and integration autonomously.
+2.  **Execute** (without waiting for approval): Handle file creation, styling, and integration autonomously.
 3.  **Report**:
     - **Visual**: [Show Screenshot via Chrome DevTools]
     - **Achieved**: "The [Component] is now interactive and responsive."
+
+**IMPORTANT**: Do NOT ask for user approval before executing. Present the plan and proceed immediately.
 
 ## 0. Design Tokens (MANDATORY)
 

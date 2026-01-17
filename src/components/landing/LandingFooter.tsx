@@ -2,6 +2,7 @@ import { ChevronsUpDown } from "lucide-react";
 import Link from "next/link";
 
 import { InfinityLogo } from "@/utils/icons/InfinityLogo";
+import ContactUsLinks from "@/components/landing/contact-us-links";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -71,52 +72,31 @@ const links = [
     ],
   },
   {
-    group: "Company",
-    items: [
-      {
-        title: "About",
-        href: "#",
-      },
-      {
-        title: "Careers",
-        href: "#",
-      },
-      {
-        title: "Blog",
-        href: "#",
-      },
-      {
-        title: "Press",
-        href: "#",
-      },
-      {
-        title: "Contact",
-        href: "#",
-      },
-      {
-        title: "Help",
-        href: "#",
-      },
-    ],
-  },
-  {
     group: "Legal",
     items: [
       {
-        title: "Licence",
-        href: "#",
+        title: "Terms of Service",
+        href: "/legal/terms-of-service",
       },
       {
         title: "Privacy",
-        href: "#",
+        href: "/legal/privacy",
       },
       {
         title: "Cookies",
-        href: "#",
+        href: "/legal/cookies",
       },
       {
-        title: "Security",
-        href: "#",
+        title: "Disclaimer",
+        href: "/legal/disclaimer",
+      },
+      {
+        title: "Refund",
+        href: "/legal/refund",
+      },
+      {
+        title: "Risk Disclosure",
+        href: "/legal/risk-disclosure",
       },
     ],
   },
@@ -281,6 +261,7 @@ export default function LandingFooter() {
                 ))}
               </div>
             ))}
+            <ContactUsLinks />
           </div>
           <form className="row-start-1 border-b pb-8 text-sm md:col-span-2 md:border-none lg:col-span-1">
             <div className="space-y-4">

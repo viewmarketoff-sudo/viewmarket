@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
@@ -17,11 +18,12 @@ export default function LandingHero() {
             <div className="relative mx-auto flex max-w-full flex-col px-4 lg:block lg:px-8 xl:px-12 2xl:px-16">
               <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
                 <h1 className="mt-8 max-w-2xl text-balance text-5xl md:text-6xl lg:mt-16 xl:text-7xl">
-                  Build 10x Faster with NS
+                  Automate your market strategies without the busywork
                 </h1>
                 <p className="mt-8 max-w-2xl text-balance text-lg">
-                  Highly customizable components for building modern websites
-                  and applications you mean it.
+                  View Market turns your ideas into chart-ready automations with
+                  AI. Design playbooks, validate signals, and deploy on
+                  autopilot from one streamlined workspace.
                 </p>
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
@@ -31,7 +33,7 @@ export default function LandingHero() {
                     className="h-12 rounded-full pl-5 pr-3 text-base"
                   >
                     <Link href="#link">
-                      <span className="text-nowrap">Start Building</span>
+                      <span className="text-nowrap">Start automating</span>
                       <ChevronRight className="ml-1" />
                     </Link>
                   </Button>
@@ -43,7 +45,7 @@ export default function LandingHero() {
                     className="h-12 rounded-full px-5 text-base hover:bg-zinc-950/5 dark:hover:bg-white/5"
                   >
                     <Link href="#link">
-                      <span className="text-nowrap">Request a demo</span>
+                      <span className="text-nowrap">Book a walkthrough</span>
                     </Link>
                   </Button>
                 </div>
@@ -60,77 +62,85 @@ export default function LandingHero() {
               <div className="relative py-6 md:w-[calc(100%-11rem)]">
                 <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
                   <div className="flex">
-                    <img
+                    <Image
                       className="mx-auto h-5 w-fit dark:invert"
                       src="https://html.tailus.io/blocks/customers/nvidia.svg"
                       alt="Nvidia Logo"
-                      height="20"
-                      width="auto"
+                      width={120}
+                      height={20}
+                      sizes="120px"
                     />
                   </div>
 
                   <div className="flex">
-                    <img
+                    <Image
                       className="mx-auto h-4 w-fit dark:invert"
                       src="https://html.tailus.io/blocks/customers/column.svg"
                       alt="Column Logo"
-                      height="16"
-                      width="auto"
+                      width={120}
+                      height={16}
+                      sizes="120px"
                     />
                   </div>
                   <div className="flex">
-                    <img
+                    <Image
                       className="mx-auto h-4 w-fit dark:invert"
                       src="https://html.tailus.io/blocks/customers/github.svg"
                       alt="GitHub Logo"
-                      height="16"
-                      width="auto"
+                      width={120}
+                      height={16}
+                      sizes="120px"
                     />
                   </div>
                   <div className="flex">
-                    <img
+                    <Image
                       className="mx-auto h-5 w-fit dark:invert"
                       src="https://html.tailus.io/blocks/customers/nike.svg"
                       alt="Nike Logo"
-                      height="20"
-                      width="auto"
+                      width={120}
+                      height={20}
+                      sizes="120px"
                     />
                   </div>
                   <div className="flex">
-                    <img
+                    <Image
                       className="mx-auto h-5 w-fit dark:invert"
                       src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
                       alt="Lemon Squeezy Logo"
-                      height="20"
-                      width="auto"
+                      width={120}
+                      height={20}
+                      sizes="120px"
                     />
                   </div>
                   <div className="flex">
-                    <img
+                    <Image
                       className="mx-auto h-4 w-fit dark:invert"
                       src="https://html.tailus.io/blocks/customers/laravel.svg"
                       alt="Laravel Logo"
-                      height="16"
-                      width="auto"
+                      width={120}
+                      height={16}
+                      sizes="120px"
                     />
                   </div>
                   <div className="flex">
-                    <img
+                    <Image
                       className="mx-auto h-7 w-fit dark:invert"
                       src="https://html.tailus.io/blocks/customers/lilly.svg"
                       alt="Lilly Logo"
-                      height="28"
-                      width="auto"
+                      width={120}
+                      height={28}
+                      sizes="120px"
                     />
                   </div>
 
                   <div className="flex">
-                    <img
+                    <Image
                       className="mx-auto h-6 w-fit dark:invert"
                       src="https://html.tailus.io/blocks/customers/openai.svg"
                       alt="OpenAI Logo"
-                      height="24"
-                      width="auto"
+                      width={120}
+                      height={24}
+                      sizes="120px"
                     />
                   </div>
                 </InfiniteSlider>

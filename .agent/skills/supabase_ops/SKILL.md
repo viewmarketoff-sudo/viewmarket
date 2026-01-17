@@ -7,6 +7,17 @@ description: Standardized workflows for managing Supabase database, auth, and ed
 
 This skill defines the canonical workflows for interacting with the View Market Supabase project.
 
+## ⚠️ CRITICAL OPERATIONAL RULE
+
+**DO NOT run any of the following commands unless the user EXPLICITLY requests them:**
+
+- `npm run build` or any build commands
+- `npm run dev` or any development servers
+- `npm run lint` or any lint servers
+- Any other build/development/lint processes
+
+**Why**: These commands should only be executed when the user specifically asks for verification, deployment preparation, or testing. Auto-running them wastes resources and disrupts the workflow.
+
 **Core Principle**: ZERO HESITATION for constructive actions.
 
 - **AUTO-EXECUTE (Constructive)**: Creating tables, adding columns, defining policies, fixing schemas, or inserting data. **Do not ask for permission.** Just do it.
@@ -20,12 +31,14 @@ This skill defines the canonical workflows for interacting with the View Market 
 
 ## Communication Protocol (CRITICAL)
 
-1.  **Plan**: Before major changes, explain the _intent_ in simple English (e.g., "I will add a 'phone_number' field to user profiles").
-2.  **Execute**: Handle all SQL and migrations autonomously.
+1.  **Plan**: Explain the _intent_ in simple English (e.g., "I will add a 'phone_number' field to user profiles"). **Then immediately execute (if constructive).**
+2.  **Execute** (without waiting for approval for constructive actions): Handle all SQL and migrations autonomously.
 3.  **Report**: explicitly state:
     - **Before**: "Users couldn't save phone numbers."
     - **After**: "Added `phone_number` column to `profiles`."
     - **Achieved**: "Users can now save contact details."
+
+**IMPORTANT**: For CONSTRUCTIVE actions (creating tables, adding columns, etc.), do NOT ask for approval. Present the plan and execute immediately. For DESTRUCTIVE actions (dropping tables, deleting data), ask first.
 
 ## 1. Schema Management (Migrations)
 

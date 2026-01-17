@@ -10,10 +10,21 @@ Use this skill to build complete features (DB + Backend + Frontend) in the View 
 **Core Goal**: A clean, scalable, single codebase where **SECURITY IS PARAMOUNT**.
 **Security Rule**: "Zero Leakage". No sensitive logic, API keys, or raw data queries in Client Components. All business logic must live in **Server Actions**.
 
+## ⚠️ CRITICAL OPERATIONAL RULE
+
+**DO NOT run any of the following commands unless the user EXPLICITLY requests them:**
+
+- `npm run build` or any build commands
+- `npm run dev` or any development servers
+- `npm run lint` or any lint servers
+- Any other build/development/lint processes
+
+**Why**: These commands should only be executed when the user specifically asks for verification, deployment preparation, or testing. Auto-running them wastes resources and disrupts the workflow.
+
 ## Communication Protocol (Non-Technical)
 
-1.  **Plan**: "I will build the [Feature] by creating the database table, the secure backend logic, and the user interface."
-2.  **Execute**:
+1.  **Plan**: "I will build the [Feature] by creating the database table, the secure backend logic, and the user interface." **Then immediately execute.**
+2.  **Execute** (without waiting for approval):
     - **Step 1**: Database (Schema & Data).
     - **Step 2**: Backend (Secure Server Actions).
     - **Step 3**: Frontend (UI Components).
@@ -21,6 +32,8 @@ Use this skill to build complete features (DB + Backend + Frontend) in the View 
     - **Feature**: "The [Feature] is ready."
     - **Security Check**: "Verified that all logic is hidden on the server."
     - **Visual**: [Screenshot]
+
+**IMPORTANT**: Do NOT ask for user approval before executing. Present the plan and proceed immediately.
 
 ## 1. End-to-End Feature Build
 

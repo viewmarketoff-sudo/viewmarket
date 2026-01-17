@@ -58,15 +58,15 @@ export default function LandingIntegrations() {
           </div>
           <div className="mx-auto mt-12 max-w-lg space-y-6 text-center">
             <h2 className="text-balance text-3xl font-semibold md:text-4xl">
-              Integrate with your favorite tools
+              Connect your stack in minutes
             </h2>
             <p className="text-muted-foreground">
-              Connect seamlessly with popular platforms and services to enhance
-              your workflow.
+              Plug View Market into the editors, data sources, and copilots your
+              team already uses—no rewrites, just automation that fits.
             </p>
 
             <Button variant="outline" size="sm" asChild>
-              <Link href="/sign-in">Get Started</Link>
+              <Link href="/sign-in">Connect your tools</Link>
             </Button>
           </div>
         </div>

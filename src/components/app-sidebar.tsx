@@ -259,21 +259,21 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar
       collapsible="icon"
-      className="dark z-50 border-r border-border bg-[hsl(0,0%,11%)] text-foreground transition-all duration-300 ease-in-out"
+      className="z-50 border-r border-border bg-background text-foreground transition-all duration-300 ease-in-out"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}
     >
-      <SidebarHeader className="border-b border-border bg-[hsl(0,0%,11%)]">
+      <SidebarHeader className="border-b border-border bg-background">
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
-      <SidebarContent className="bg-[hsl(0,0%,11%)]">
+      <SidebarContent className="bg-background">
         <NavDashboard items={navDashboard} />
         <NavCharts items={navCharts} />
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
       </SidebarContent>
-      <SidebarFooter className="border-t border-border bg-[hsl(0,0%,11%)]">
+      <SidebarFooter className="border-t border-border bg-background">
         <NavUser user={data.user} />
       </SidebarFooter>
       <SidebarRail />

@@ -4,7 +4,7 @@
 
 **Goal**: Result-oriented workflow for a non-coding user.
 
-1.  **PLAN (Simple English)**: Explain _what_ you will do and _why_. **Get Approval.**
+1.  **PLAN (Simple English)**: Explain _what_ you will do and _why_, show the plan, then begin executing autonomously.
 2.  **EXECUTE (Autonomous)**: Handle all technical details (coding, db, git) without nagging.
 3.  **REPORT (Visual)**: Show "Before vs After".
     - **Visual**: Screenshots for UI.

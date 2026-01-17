@@ -8,16 +8,19 @@ export default function LandingCTA() {
       <div className="mx-auto max-w-full px-4 lg:px-8 xl:px-12 2xl:px-16">
         <div className="text-center">
           <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
-            Start Building
+            Launch automations with confidence
           </h2>
-          <p className="mt-4">Libero sapiente aliquam quibusdam aspernatur.</p>
+          <p className="mt-4">
+            Move from idea to chart-ready workflows faster with View Market. No
+            licenses required—just automation that runs itself.
+          </p>
 
           <form action="" className="mx-auto mt-10 max-w-sm lg:mt-12">
             <div className="relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.75rem)] border bg-background pr-3 shadow shadow-zinc-950/5 has-[input:focus]:ring-2 has-[input:focus]:ring-muted">
               <Mail className="text-caption pointer-events-none absolute inset-y-0 left-5 my-auto size-5" />
 
               <input
-                placeholder="Your mail address"
+                placeholder="Work email"
                 className="h-14 w-full bg-transparent pl-12 focus:outline-none"
                 type="email"
               />

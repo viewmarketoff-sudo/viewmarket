@@ -19,11 +19,11 @@ export default function LandingFeatures() {
           <div className="p-6 sm:p-12">
             <span className="flex items-center gap-2 text-muted-foreground">
               <MapIcon className="size-4" />
-              Real time location tracking
+              End-to-end automation
             </span>
 
             <p className="mt-8 text-2xl font-semibold">
-              Advanced tracking system, Instantly locate all your assets.
+              Turn every signal into a reliable workflow without hopping tools.
             </p>
           </div>
 
@@ -46,11 +46,12 @@ export default function LandingFeatures() {
           <div className="relative z-10">
             <span className="flex items-center gap-2 text-muted-foreground">
               <MessageCircle className="size-4" />
-              Email and web support
+              Human + AI support
             </span>
 
             <p className="my-8 text-2xl font-semibold">
-              Reach out via email or web for any assistance you need.
+              Ask for help anytime. Our team and copilots keep your automations
+              unblocked.
             </p>
           </div>
           <div aria-hidden className="flex flex-col gap-8">
@@ -81,21 +82,21 @@ export default function LandingFeatures() {
         </div>
         <div className="col-span-full border-y p-12">
           <p className="text-center text-4xl font-semibold lg:text-7xl">
-            99.99% Uptime
+            Built for 24/7 reliability
           </p>
         </div>
         <div className="relative col-span-full">
           <div className="absolute z-10 max-w-lg px-6 pr-12 pt-6 md:px-12 md:pt-12">
             <span className="flex items-center gap-2 text-muted-foreground">
               <Activity className="size-4" />
-              Activity feed
+              Automation activity feed
             </span>
 
             <p className="my-8 text-2xl font-semibold">
-              Monitor your application&apos;s activity in real-time.{" "}
+              Monitor runs, signals, and rollouts in real time.
               <span className="text-muted-foreground">
                 {" "}
-                Instantly identify and resolve issues.
+                Catch anomalies early and keep every workflow on track.
               </span>
             </p>
           </div>
