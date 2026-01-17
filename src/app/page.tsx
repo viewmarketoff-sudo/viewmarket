@@ -5,11 +5,8 @@ import TitleBar from "@/components/shared/TitleBar";
 import { getCurrentUser } from "@/lib/auth";
 
 import CTASection from "./CTASection";
-import ExamplesSection from "./ExamplesSection";
 import FeatureSection from "./FeatureSection";
 import HeroSection from "./HeroSection";
-import InstantAPIsSection from "./InstantAPIsSection";
-import VideoSection from "./VideoSection";
 import FooterSection from "./FooterSection";
 
 export default async function Home() {
@@ -24,9 +21,6 @@ export default async function Home() {
       <TitleBar />
       <HeroSection />
       <FeatureSection />
-      <ExamplesSection />
-      <InstantAPIsSection />
-      <VideoSection />
       <CTASection />
       <FooterSection />
     </main>

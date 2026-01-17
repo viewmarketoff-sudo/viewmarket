@@ -16,6 +16,41 @@ Use this skill to build premium, performant, and accessible UI components in Nex
     - **Visual**: [Show Screenshot via Chrome DevTools]
     - **Achieved**: "The [Component] is now interactive and responsive."
 
+## 0. Design Tokens (MANDATORY)
+
+**These styles MUST be applied project-wide. No exceptions.**
+
+### Background
+
+| Token           | Value             | Tailwind Class  |
+| :-------------- | :---------------- | :-------------- |
+| Page Background | `hsl(0, 0%, 11%)` | `bg-background` |
+| Card Background | `hsl(0, 0%, 14%)` | `bg-card`       |
+
+### Text Styling
+
+| Element                   | Style                        | How to Apply               |
+| :------------------------ | :--------------------------- | :------------------------- |
+| **Hero/Section Headings** | White-to-gray gradient       | Add `.text-gradient` class |
+| Default Text              | Off-white `hsl(0, 0%, 95%)`  | `text-foreground`          |
+| Muted/Subtitles           | Gray `hsl(0, 0%, 63%)`       | `text-foreground-light`    |
+| Card Text                 | Light gray `hsl(0, 0%, 93%)` | `text-card-foreground`     |
+
+### The `.text-gradient` Utility (from `globals.css`)
+
+```css
+.text-gradient {
+  background: linear-gradient(to bottom, hsl(0, 0%, 95%), hsl(0, 0%, 63%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+```
+
+**Rule**: All major headings (H1, H2, section titles) MUST use `.text-gradient`.
+
+---
+
 ## 1. Component Creation (Atomic/Shadcn)
 
 **Trigger**: "Create a button", "Add a card", "Build the hero section".

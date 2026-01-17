@@ -55,3 +55,37 @@ Load these `.agent/skills/[name]/SKILL.md` files for specialized tasks.
 - **Naming**: `PascalCase` for Components, `kebab-case` for files/folders.
 - **Type Safety**: No `any`. Share types (DB -> UI) strictly.
 - **Imports**: Use `@/` alias. Group: Built-in -> External -> Internal.
+
+## 6. Design System (MANDATORY)
+
+### Background
+
+- **Default Background**: `hsl(0, 0%, 11%)` (dark charcoal) – Use `bg-background` class.
+- **Card Background**: `hsl(0, 0%, 14%)` – Use `bg-card` class.
+- **NEVER** use pure black (`#000`) or white (`#fff`) as page backgrounds.
+
+### Typography & Colors
+
+- **Primary Text Gradient** (Headings, Titles, Hero Text):
+
+  ```css
+  background: linear-gradient(to bottom, hsl(0, 0%, 95%), hsl(0, 0%, 63%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  ```
+
+  - **Utility Class**: Use `.text-gradient` (defined in `globals.css`).
+
+- **Default Text**: `hsl(0, 0%, 95%)` (off-white) – Use `text-foreground` class.
+- **Muted/Subtitle Text**: `hsl(0, 0%, 63%)` – Use `text-foreground-light` class.
+
+### Usage Rules
+
+| Element Type     | Style                                             |
+| :--------------- | :------------------------------------------------ |
+| Page Background  | `bg-background`                                   |
+| Hero Headings    | `.text-gradient` (gradient text)                  |
+| Section Headings | `.text-gradient` OR `text-foreground`             |
+| Body/Paragraph   | `text-card-foreground` or `text-foreground-light` |
+| Cards/Panels     | `bg-card` with `border-foreground/10`             |
