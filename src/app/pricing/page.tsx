@@ -5,8 +5,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import TitleBar from "@/components/shared/TitleBar";
 import { cn } from "@/lib/utils";
-
-import FooterSection from "../FooterSection";
+import LandingFooter from "@/components/landing/LandingFooter";
 
 const planOrder = [
   "Free",
@@ -399,7 +398,7 @@ const PricingPage = () => {
           </div>
         </section>
       </div>
-      <FooterSection />
+      <LandingFooter />
     </main>
   );
 };
